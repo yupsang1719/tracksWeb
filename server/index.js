@@ -27,7 +27,7 @@ app.use("/webhook", webhookRoutes);
 app.use(express.json());
 
 // Routes
-app.use("/admin", adminRoutes);
+app.use("/api/admin", adminRoutes);
 app.use("/api/tickets", ticketRoutes);
 
 // Your email confirmation fallback
