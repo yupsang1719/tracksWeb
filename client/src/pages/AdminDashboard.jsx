@@ -1,31 +1,89 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 export default function AdminDashboard() {
+  const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    const fetchBookings = async () => {
+      try {
+        const res = await axios.get("/api/admin/bookings"); // Adjust URL as needed
+        setBookings(res.data);
+      } catch (err) {
+        console.error("Error fetching bookings:", err);
+      }
+    };
+
+    fetchBookings();
+  }, []);
+
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+    doc.text("Vikrum Fest Bookings", 14, 15);
+
+    const tableData = bookings.map((b, i) => [
+      i + 1,
+      b.name,
+      b.email,
+      b.tickets,
+      b.ticketNumber || "N/A",
+      b.event,
+      b.paymentIntentId,
+      new Date(b.createdAt).toLocaleString(),
+    ]);
+
+    autoTable(doc, {
+      startY: 20,
+      head: [["#", "Name", "Email", "Tickets", "Ticket No.", "Event", "Payment ID", "Date"]],
+      body: tableData,
+    });
+
+    doc.save("bookings.pdf");
+  };
+
   return (
-    <section className="min-h-screen bg-[#0F3C5C] text-white px-6 py-12 md:px-20">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Admin Dashboard</h1>
-        <p className="text-lg mb-10 opacity-80">
-          Welcome back, admin! Here's a quick overview of your event activity.
-        </p>
+    <div className="p-6 bg-[#0F3C5C] min-h-screen text-white">
+      <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#123b58] p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h2 className="text-2xl font-semibold mb-2">Total Bookings</h2>
-            <p className="text-4xl font-bold text-[#6D9999]">24</p>
-          </div>
+      <button
+        onClick={downloadPDF}
+        className="mb-4 bg-[#6D9999] hover:bg-[#5b8686] text-white px-4 py-2 rounded"
+      >
+        Download PDF
+      </button>
 
-          <div className="bg-[#123b58] p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h2 className="text-2xl font-semibold mb-2">Upcoming Events</h2>
-            <p className="text-4xl font-bold text-[#6D9999]">3</p>
-          </div>
-
-          <div className="bg-[#123b58] p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h2 className="text-2xl font-semibold mb-2">Regular Events</h2>
-            <p className="text-4xl font-bold text-[#6D9999]">7</p>
-          </div>
-        </div>
+      <div className="overflow-x-auto bg-white text-black rounded shadow">
+        <table className="min-w-full text-sm text-left">
+          <thead className="bg-[#6D9999] text-white">
+            <tr>
+              <th className="px-4 py-2">#</th>
+              <th className="px-4 py-2">Name</th>
+              <th className="px-4 py-2">Email</th>
+              <th className="px-4 py-2">Tickets</th>
+              <th className="px-4 py-2">Ticket No.</th>
+              <th className="px-4 py-2">Event</th>
+              <th className="px-4 py-2">Payment ID</th>
+              <th className="px-4 py-2">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bookings.map((b, index) => (
+              <tr key={b._id} className="border-t">
+                <td className="px-4 py-2">{index + 1}</td>
+                <td className="px-4 py-2">{b.name}</td>
+                <td className="px-4 py-2">{b.email}</td>
+                <td className="px-4 py-2">{b.tickets}</td>
+                <td className="px-4 py-2">{b.ticketNumber}</td>
+                <td className="px-4 py-2">{b.event}</td>
+                <td className="px-4 py-2">{b.paymentIntentId}</td>
+                <td className="px-4 py-2">{new Date(b.createdAt).toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </section>
+    </div>
   );
 }
