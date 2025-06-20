@@ -22,7 +22,7 @@ export default function TicketModal({ isOpen, onClose }) {
     try {
       const stripe = await stripePromise;
 
-      const res = await fetch("https://tracksaldershot.co.uk/api/tickets/create-checkout-session", {
+      const res = await fetch("/api/tickets/create-checkout-session", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
