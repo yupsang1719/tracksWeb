@@ -15,7 +15,7 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/admin/login", formData);
+      const res = await axios.post("admin/login", formData);
       const { token } = res.data;
 
       localStorage.setItem("adminToken", token);
