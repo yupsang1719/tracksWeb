@@ -32,8 +32,8 @@ router.post("/create-checkout-session", async (req, res) => {
         message,
         event: "Vikrum Fest 2025",
       },
-      success_url: "http://localhost:3000/success",
-      cancel_url: "http://localhost:3000/cancel",
+      success_url: "https://tracksaldershot.co.uk/success",
+      cancel_url: "https://tracksaldershot.co.uk/cancel",
     });
 
     res.status(200).json({ id: session.id });
