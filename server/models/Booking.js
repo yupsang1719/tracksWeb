@@ -7,6 +7,7 @@ const bookingSchema = new mongoose.Schema({
   message: String,
   event: String,
   paymentIntentId: String,
+  ticketNumber: String, // ✅ New field
   createdAt: {
     type: Date,
     default: Date.now,

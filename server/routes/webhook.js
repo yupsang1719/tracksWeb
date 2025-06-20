@@ -4,6 +4,13 @@ const Booking = require("../models/Booking");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const nodemailer = require("nodemailer");
 
+const generateTicketNumber = () => {
+  const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, "").slice(0, 12); // YYYYMMDDHHMM
+  const random = Math.random().toString(36).substring(2, 6).toUpperCase(); // Random 4-letter code
+  return `VIK-${timestamp}-${random}`;
+};
+
+
 router.post("/", express.raw({ type: "application/json" }), async (req, res) => {
   const sig = req.headers["stripe-signature"];
 
@@ -27,6 +34,7 @@ router.post("/", express.raw({ type: "application/json" }), async (req, res) => 
         message: session.metadata.message || "",
         event: session.metadata.event || "Unknown",
         paymentIntentId: session.payment_intent,
+        ticketNumber: generateTicketNumber(),
       });
 
       await booking.save();
@@ -53,6 +61,7 @@ Details:
 - Name: ${booking.name}
 - Tickets: ${booking.tickets}
 - Event: ${booking.event}
+- Ticket Number: ${booking.ticketNumber}
 - Payment ID: ${booking.paymentIntentId}
 
 Please show this email as your entry pass at the venue.
