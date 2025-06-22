@@ -15,6 +15,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminLogin from "./pages/AdminLogin";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
+import CocktailMenu from "./pages/CocktailMenu";
+import WineMenu from "./pages/WineMenu";
 // import Menu from "./pages/Menu";
 // import Events from "./pages/Events";
 // import Gallery from "./pages/Gallery";
@@ -30,7 +32,8 @@ export default function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/menu" element={<ComingSoon />} />
+            <Route path="/menu/cocktails" element={<CocktailMenu />} />
+            <Route path="/menu/wines" element={<WineMenu />} />
             <Route path="/events" element={<Events />} />
             <Route path="/gallery" element={<ComingSoon />} />
             <Route path="/about" element={<ComingSoon />} />

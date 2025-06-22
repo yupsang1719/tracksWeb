@@ -6,6 +6,7 @@ import UpcomingEvents from "../components/sections/UpcomingEvents";
 import BarIntro from "../components/sections/BarIntro";
 import GalleryPreview from "../components/sections/GalaryPreview";
 import ParallaxBreakSmall from "../components/sections/ParallaxBreakSmall";
+import EventCountdownBanner from "../components/EventCountdownBanner";
 
 const Home = () => {
   return (
@@ -14,6 +15,10 @@ const Home = () => {
       <AboutMini />
       <ParallaxBreak />
       <UpcomingEvents />
+      <EventCountdownBanner
+        eventTitle="Vikrum Fest 2025"
+        eventDate="2025-08-24T18:00:00"
+      />
       <BarIntro />
       <GalleryPreview />
       <ParallaxBreakSmall />

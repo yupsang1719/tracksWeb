@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EventModal from "../EventModal";
-import TicketModal from "./TicketModal"; // New import
+import TicketModal from "./TicketModal";
+import CountdownTimer from "../../CountDownTimer";
 
 export default function MajorEvent() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,12 @@ export default function MajorEvent() {
             <p className="text-[#6D9999] mb-4">{majorEvent.date}</p>
             <p className="mb-4">{majorEvent.description}</p>
           </div>
+
+          <div className="bg-yellow-200 text-yellow-900 px-4 py-2 rounded mb-4 font-medium shadow-inner">
+          🎟️ Only <span className="font-bold">10</span> Early Bird Tickets Left!<br />
+          ⏳ Offer ends in <CountdownTimer deadline="2025-07-08T23:59:59" /> Or When All Booked
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <button onClick={() => setIsOpen(true)} className="bg-white text-[#0F3C5C] px-6 py-2 rounded font-semibold hover:bg-gray-100">
               View Details

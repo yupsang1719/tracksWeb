@@ -17,7 +17,13 @@ const Header = () => {
 
         <nav className="hidden md:flex space-x-[60px] lg:space-x-[100px] text-[20px] lg:text-[25px] font-semibold w-full justify-center">
           <Link to="/" className="hover:text-[#6D9999] transition">Home</Link>
-          <Link to="/menu" className="hover:text-[#6D9999] transition">Menu</Link>
+          <div className="relative group">
+            <button className="hover:text-[#6D9999] transition">Menu</button>
+            <div className="absolute top-full left-0 mt-2 w-48 bg-white border rounded shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-50 text-[18px]">
+              <Link to="/menu/cocktails" className="block px-4 py-2 text-[#090909] hover:bg-[#f4f4f4]">Cocktail Menu</Link>
+              <Link to="/menu/wines" className="block px-4 py-2 text-[#090909] hover:bg-[#f4f4f4]">Wine Menu</Link>
+            </div>
+          </div>
           <Link to="/events" className="hover:text-[#6D9999] transition">Events</Link>
           <Link to="/gallery" className="hover:text-[#6D9999] transition">Gallery</Link>
           <Link to="/about" className="hover:text-[#6D9999] transition">About</Link>
@@ -35,7 +41,11 @@ const Header = () => {
             </div>
             <div className="mt-10 flex flex-col space-y-6 text-[20px] font-semibold">
             <Link onClick={() => setMenuOpen(false)} to="/" className="hover:text-[#6D9999] transition">Home</Link>
-            <Link onClick={() => setMenuOpen(false)} to="/menu" className="hover:text-[#6D9999] transition">Menu</Link>
+            <div className="flex flex-col space-y-1">
+              <span className="text-white font-semibold">Menu</span>
+              <Link onClick={() => setMenuOpen(false)} to="/menu/cocktails" className="ml-4 text-sm hover:text-[#6D9999]">Cocktail Menu</Link>
+              <Link onClick={() => setMenuOpen(false)} to="/menu/wines" className="ml-4 text-sm hover:text-[#6D9999]">Wine Menu</Link>
+            </div>
             <Link onClick={() => setMenuOpen(false)} to="/events" className="hover:text-[#6D9999] transition">Events</Link>
             <Link onClick={() => setMenuOpen(false)} to="/gallery" className="hover:text-[#6D9999] transition">Gallery</Link>
             <Link onClick={() => setMenuOpen(false)} to="/about" className="hover:text-[#6D9999] transition">About</Link>
