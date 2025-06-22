@@ -20,7 +20,7 @@ import WineMenu from "./pages/WineMenu";
 // import Menu from "./pages/Menu";
 // import Events from "./pages/Events";
 // import Gallery from "./pages/Gallery";
-// import About from "./pages/About";
+import About from "./pages/About";
 // import Contact from "./pages/Contact";
 // import BookTable from "./pages/BookTable";
 
@@ -36,7 +36,7 @@ export default function App() {
             <Route path="/menu/wines" element={<WineMenu />} />
             <Route path="/events" element={<Events />} />
             <Route path="/gallery" element={<ComingSoon />} />
-            <Route path="/about" element={<ComingSoon />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ComingSoon />} />
             <Route path="/book" element={<ComingSoon />} />
             <Route path="*" element={<NotFound />} />

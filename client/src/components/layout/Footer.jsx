@@ -1,44 +1,58 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F3C5C] text-white pt-12 pb-6 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-6">
-
-        {/* Brand Title */}
-        <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-wide text-[#6D9999]">
-          TRACKS
-        </h1>
-
-        {/* Navigation Links */}
-        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm md:text-base font-medium uppercase tracking-wider">
-          <Link to="/" className="hover:text-[#6D9999] transition">Home</Link>
-          <Link to="/menu" className="hover:text-[#6D9999] transition">Menu</Link>
-          <Link to="/events" className="hover:text-[#6D9999] transition">Events</Link>
-          <Link to="/gallery" className="hover:text-[#6D9999] transition">Gallery</Link>
-          <Link to="/about" className="hover:text-[#6D9999] transition">About</Link>
-          <Link to="/contact" className="hover:text-[#6D9999] transition">Contact</Link>
-        </nav>
-
-        {/* Social Media Icons */}
-        <div className="flex gap-6 mt-4 text-[#6D9999]">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-            <FaFacebookF size={18} />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-            <FaInstagram size={20} />
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-            <FaTiktok size={22} />
-          </a>
+    <footer className="bg-white text-[#090909] border-t border-gray-200">
+      <div className="max-w-7xl mx-auto py-10 px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm md:text-base">
+        {/* Logo & Description */}
+        <div>
+          <h2 className="text-2xl font-bold mb-2">The Tracks</h2>
+          <p className="text-gray-600">
+            Where music meets the moment. Cocktails, community, and unforgettable nights in Aldershot.
+          </p>
+          <div className="flex gap-4 mt-4 text-xl text-[#0F3C5C]">
+            <a href="https://www.facebook.com/thefunkyend" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+            <a href="https://www.instagram.com/tracks_aldershot?igsh=NWIxazRlNW1vMWwz&utm_source=qr" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://www.tiktok.com/@tracksaldershot?_t=ZN-8xQ6C8eXsus&_r=1" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
+          </div>
         </div>
 
-        {/* Copyright */}
-        <p className="text-xs text-gray-400 mt-6">
-          © {new Date().getFullYear()} Tracks Aldershot. All rights reserved.
-        </p>
+        {/* Main Navigation */}
+        <div>
+          <h3 className="font-semibold mb-3">Navigation</h3>
+          <ul className="space-y-2">
+            <li><Link to="/" className="hover:text-[#6D9999]">Home</Link></li>
+            <li><Link to="/about" className="hover:text-[#6D9999]">About</Link></li>
+            <li><Link to="/events" className="hover:text-[#6D9999]">Events</Link></li>
+            <li><Link to="/contact" className="hover:text-[#6D9999]">Contact</Link></li>
+          </ul>
+        </div>
+
+        {/* Menu Submenu */}
+        <div>
+          <h3 className="font-semibold mb-3">Menu</h3>
+          <ul className="space-y-2">
+            <li><Link to="/menu/cocktails" className="hover:text-[#6D9999]">Cocktails</Link></li>
+            <li><Link to="/menu/wines" className="hover:text-[#6D9999]">Wines</Link></li>
+            <li><Link to="/menu" className="hover:text-[#6D9999]">Full Menu</Link></li>
+          </ul>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="font-semibold mb-3">Quick Links</h3>
+          <ul className="space-y-2">
+            <li><Link to="/gallery" className="hover:text-[#6D9999]">Gallery</Link></li>
+            <li><Link to="/book" className="hover:text-[#6D9999]">Book a Table</Link></li>
+            <li><Link to="/admin/login" className="hover:text-[#6D9999]">Admin Login</Link></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="text-center py-6 border-t border-gray-100 text-gray-500 text-xs">
+        © {new Date().getFullYear()} The Tracks, Aldershot. All rights reserved.
       </div>
     </footer>
   );
