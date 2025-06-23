@@ -36,7 +36,7 @@ export default function BarIntro() {
           {/* CTA BUTTON */}
           <div>
             <Link
-              to="/menu"
+              to="/menu/cocktails"
               className="inline-block bg-[#0F3C5C] text-white px-6 py-3 rounded font-semibold hover:bg-[#0c304b] transition"
             >
               View Our Menu

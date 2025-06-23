@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -35,12 +36,12 @@ export default function Hero() {
             A Classic British Pub Experience
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="bg-[#6D9999] text-[#0F3C5C] font-semibold px-6 py-3 rounded hover:bg-[#5b8686] transition">
-              Book a Table
-            </button>
-            <button className="border border-[#6D9999] px-6 py-3 rounded hover:bg-[#6D9999] hover:text-[#0F3C5C] transition">
-              View Menu
-            </button>
+            <Link
+                to="/menu/cocktails"
+                className="bg-[#6D9999] text-[#0F3C5C] px-6 py-3 rounded font-semibold text-center hover:bg-[#5b8686] transition"
+              >
+                View Our Menus
+              </Link>
           </div>
         </div>
       </div>

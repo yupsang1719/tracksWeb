@@ -1,110 +1,41 @@
-import React, { useState, useEffect } from "react";
-const galleryImages = [
-  "/Asst/imgs/galary/gallery-1.jpg",
-  "/Asst/imgs/galary/gallery-2.jpg",
-  "/Asst/imgs/galary/gallery-3.jpg",
-  "/Asst/imgs/galary/gallery-4.jpg",
-  "/Asst/imgs/galary/gallery-5.jpg",
-  "/Asst/imgs/galary/gallery-6.jpg",
-  "/Asst/imgs/galary/gallery-7.jpg",
-  "/Asst/imgs/galary/gallery-8.jpg",
-  "/Asst/imgs/galary/gallery-9.jpg",
-  "/Asst/imgs/galary/gallery-10.jpg",
+import { Link } from "react-router-dom";
+
+const previewImages = [
+  { src: "/Asst/imgs/galary/gallery-6.jpg", alt: "Open Mic", category: "Open Mic" },
+  { src: "/Asst/imgs/galary/gallery-2.jpg", alt: "Disco Karaoke", category: "Karaoke" },
+  { src: "/Asst/imgs/galary/gallery-9.jpg", alt: "Ladies Night", category: "Ladies" },
+  { src: "/Asst/imgs/galary/gallery-4.jpg", alt: "Live Music", category: "Live" },
+  { src: "/Asst/imgs/galary/gallery-5.jpg", alt: "Rainbow Karaoke", category: "Rainbow" },
+  { src: "/Asst/imgs/galary/gallery-6.jpg", alt: "Discount Night", category: "Discount" },
 ];
+
 export default function GalleryPreview() {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const handleOpen = (index) => {
-    setActiveIndex(index);
-    document.body.style.overflow = "hidden";
-  };
-
-  const handleClose = () => {
-    setActiveIndex(null);
-    document.body.style.overflow = "";
-  };
-
-  const goNext = () => {
-    setActiveIndex((prev) => (prev + 1) % galleryImages.length);
-  };
-
-  const goPrev = () => {
-    setActiveIndex((prev) =>
-      prev === 0 ? galleryImages.length - 1 : prev - 1
-    );
-  };
-
-  // 🔑 Keyboard navigation
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (activeIndex !== null) {
-        if (e.key === "Escape") handleClose();
-        if (e.key === "ArrowRight") goNext();
-        if (e.key === "ArrowLeft") goPrev();
-      }
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [activeIndex]);
-
   return (
-    <section className="bg-[#0F3C5C] text-white py-20 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl font-bold font-serif uppercase mb-6">Gallery</h2>
-        <p className="text-lg text-white/80 mb-12">
-          See what’s happening and what’s coming up at Tracks – live music, food, drinks, and fun!
-        </p>
+    <section className="bg-[#0F3C5C] py-16 px-6 md:px-20 text-center">
+      <h2 className="text-3xl md:text-5xl font-bold text-[#e5eff7] mb-10">Glimpse of The Tracks</h2>
 
-        {/* 🖼 Masonry Style Grid */}
-        <div className="columns-2 md:columns-3 gap-4 space-y-4 mb-12">
-          {galleryImages.map((src, idx) => (
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        {previewImages.map((img, idx) => (
+          <Link to="/gallery" key={idx} className="group relative overflow-hidden rounded-lg shadow hover:shadow-lg">
             <img
-              key={idx}
-              src={src}
-              alt={`Gallery ${idx + 1}`}
-              onClick={() => handleOpen(idx)}
-              className="w-full rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300 object-cover"
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300"
               loading="lazy"
             />
-          ))}
-        </div>
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-semibold text-sm md:text-lg">
+              View More →
+            </div>
+          </Link>
+        ))}
       </div>
 
-      {/* 🪟 Modal with image */}
-      {activeIndex !== null && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="relative max-w-4xl w-full px-4">
-            {/* ❌ Close button */}
-            <button
-              onClick={handleClose}
-              className="absolute top-4 right-4 text-white text-3xl font-bold z-50 bg-black/40 px-3 py-1 rounded hover:bg-black"
-            >
-              &times;
-            </button>
-
-            {/* 📸 Image */}
-            <img
-              src={galleryImages[activeIndex]}
-              alt={`Gallery ${activeIndex + 1}`}
-              className="max-h-[90vh] mx-auto rounded-lg transition-transform duration-300 scale-100"
-            />
-
-            {/* ⬅️➡️ Navigation */}
-            <button
-              onClick={goPrev}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold z-50"
-            >
-              ‹
-            </button>
-            <button
-              onClick={goNext}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold z-50"
-            >
-              ›
-            </button>
-          </div>
-        </div>
-      )}
+      <Link
+        to="/gallery"
+        className="mt-10 inline-block bg-[#6D9999] text-white px-6 py-3 rounded hover:bg-[#5b8686] transition"
+      >
+        Explore Full Gallery
+      </Link>
     </section>
   );
 }

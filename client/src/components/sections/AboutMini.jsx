@@ -19,7 +19,7 @@ export default function Welcome() {
           </h2>
           <div className="mt-4">
             <img
-              src="/Asst/imgs/Tracks-2024-JDPIX1-82-1363x2048.jpg"
+              src="/Asst/imgs/home/tracksOut.jpeg"
               alt="Main welcome"
               className="rounded-lg shadow-lg w-full"
             />
@@ -30,7 +30,7 @@ export default function Welcome() {
         <div className="flex flex-col gap-6 justify-between">
           <div className="mt-4">
             <img
-              src="/Asst/imgs/tracks-2130.jpg"
+              src="/Asst/imgs/home/tracksIn.jpeg"
               alt="Venue"
               className="rounded-lg shadow-md w-full"
             />
@@ -63,10 +63,10 @@ export default function Welcome() {
 
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
               <Link
-                to="/menu"
+                to="/about"
                 className="bg-[#6D9999] text-[#0F3C5C] px-6 py-3 rounded font-semibold text-center hover:bg-[#5b8686] transition"
               >
-                View Our Menus
+                About Us
               </Link>
               <Link
                 to="/contact"

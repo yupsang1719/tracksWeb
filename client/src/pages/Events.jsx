@@ -1,6 +1,6 @@
 import React from "react";
 import MajorEvent from "../components/sections/events/MajorEvent";
-import UpcomingEvents from "../components/sections/events/UpcomingEvents";
+// import UpcomingEvents from "../components/sections/events/UpcomingEvents";
 import RegularEvents from "../components/sections/events/RegularEvents";
 import ParallaxBreakSmall from "../components/sections/ParallaxBreakSmall";
 
@@ -25,11 +25,11 @@ export default function Events() {
       {/* Optional Divider */}
       <ParallaxBreakSmall />
 
-      {/* Upcoming Events Grid */}
+      {/* Upcoming Events Grid
       <section className="py-16 px-6 md:px-20">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Upcoming Events</h2>
         <UpcomingEvents />
-      </section>
+      </section> */}
 
       {/* Regular Weekly Events */}
       <section className="bg-[#0d2d45] py-16 px-6 md:px-20">

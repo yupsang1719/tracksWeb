@@ -32,7 +32,29 @@ app.use("/api/tickets", ticketRoutes);
 
 // Your email confirmation fallback
 app.post("/send-confirmation", async (req, res) => {
-  // your email logic
+  const { name, email, subject, message } = req.body;
+
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    await transporter.sendMail({
+      from: `"Tracks Contact Form" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      subject: subject || "New Contact Form Submission",
+      text: `From: ${name} <${email}>\n\nMessage:\n${message}`,
+    });
+
+    res.status(200).send("Email sent");
+  } catch (err) {
+    console.error("Failed to send email:", err);
+    res.status(500).send("Email sending failed");
+  }
 });
 
 app.listen(PORT, () => {

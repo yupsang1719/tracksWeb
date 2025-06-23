@@ -1,6 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
+import ScrollToTop from "./components/utils/ScrollToTop";
+import OffersModal from "./components/utils/OffersModal";
+
 // Layout Components
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -19,14 +23,15 @@ import CocktailMenu from "./pages/CocktailMenu";
 import WineMenu from "./pages/WineMenu";
 // import Menu from "./pages/Menu";
 // import Events from "./pages/Events";
-// import Gallery from "./pages/Gallery";
+import Gallery from "./pages/Gallery";
 import About from "./pages/About";
-// import Contact from "./pages/Contact";
+import Contact from "./pages/Contact";
 // import BookTable from "./pages/BookTable";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-[#0F3C5C] text-white">
         <Header />
         <main className="flex-grow">
@@ -35,9 +40,9 @@ export default function App() {
             <Route path="/menu/cocktails" element={<CocktailMenu />} />
             <Route path="/menu/wines" element={<WineMenu />} />
             <Route path="/events" element={<Events />} />
-            <Route path="/gallery" element={<ComingSoon />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<ComingSoon />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/book" element={<ComingSoon />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/admin/login" element={<AdminLogin />} />
@@ -56,6 +61,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <OffersModal />
       </div>
     </Router>
   );
