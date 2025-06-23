@@ -27,7 +27,7 @@ export default function MajorEvent() {
           </div>
 
           <div className="bg-yellow-200 text-yellow-900 px-4 py-2 rounded mb-4 font-medium shadow-inner">
-          🎟️ Only <span className="font-bold">10</span> Early Bird Tickets Left!<br />
+          🎟️ Only <span className="font-bold">5</span> Early Bird Tickets Left!<br />
           ⏳ Offer ends in <CountdownTimer deadline="2025-07-08T23:59:59" /> Or When All Booked
           </div>
 
