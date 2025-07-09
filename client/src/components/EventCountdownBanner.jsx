@@ -43,7 +43,7 @@ export default function CountdownBanner({ onTicketClick }) {
           <span className="flex items-center gap-1"><FaMapMarkerAlt /> The Tracks, Aldershot</span>
         </div>
         <p className="mt-2 text-sm md:text-base">
-          Only <strong>5 Early Bird Tickets</strong> available! Book yours before they run out!
+           <strong>Limited Standard Tickets</strong> available! Book yours before they run out!
         </p>
       </div>
 

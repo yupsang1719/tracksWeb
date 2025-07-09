@@ -14,11 +14,11 @@ const events = [
   },
   {
     date: "Jun 25/26",
-    title: "DISCOUNT NIGHT",
-    time: "7:30 PM",
-    desc: "Join us every Wednesday & Thursday for a student-favourite night with 2-for-1 house spirits and shots from £2.50. Great beats, cheap drinks, and pure vibes — only at The Tracks!",
-    img: "/Asst/imgs/events/discountNight.jpeg",
-    tag: "Weekly",
+    title: "DNB All Night",
+    time: "8:00 PM",
+    desc: "Featuring: MAXXIMUS, EXHIBIT, JASPIN, OC, TAMIKA, JOSHWANA, JAY WALKER & NEIL PWAH",
+    img: "/Asst/imgs/events/DNB.png",
+    tag: "FREE ENTRY",
   },
   {
     date: "Every Saturday",
