@@ -19,7 +19,7 @@ router.post("/create-checkout-session", async (req, res) => {
               name: "Tracks Event Ticket",
               description: `Ticket for: ${name}`,
             },
-            unit_amount: 500, // £5 per ticket
+            unit_amount: 1000,
           },
           quantity: tickets,
         },
