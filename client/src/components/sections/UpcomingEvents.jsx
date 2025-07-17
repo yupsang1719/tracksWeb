@@ -5,7 +5,7 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 // Sample events
 const events = [
   {
-    date: "August 24",
+    date: "August 24, Sunday",
     title: "VIKRUM FESTIVAL",
     time: "12:00 AM",
     desc: "Let's Celebrate the 3rd Vikrum Festival together",
@@ -13,7 +13,7 @@ const events = [
     tag: "Special",
   },
   {
-    date: "Jun 25/26",
+    date: "Jun 18, Friday",
     title: "DNB All Night",
     time: "8:00 PM",
     desc: "Featuring: MAXXIMUS, EXHIBIT, JASPIN, OC, TAMIKA, JOSHWANA, JAY WALKER & NEIL PWAH",

@@ -2,11 +2,21 @@ import React, { useState } from "react";
 
 const cocktails = {
   Classics: [
-    { name: "Margarita", ingredients: "Tequila, Cointreau, Lime juice", price: "£9" },
-    { name: "Mojito", ingredients: "White rum, Mint, Lime, Sugar, Soda", price: "£8" },
-    { name: "Espresso Martini", ingredients: "Vodka, Coffee liqueur, Espresso", price: "£10",bestSeller: true },
-    { name: "Negroni", ingredients: "Gin, Campari, Vermouth Rosso", price: "£9" },
-    { name: "Old Fashioned", ingredients: "Bourbon, Sugar, Bitters, Orange", price: "£10",bestSeller: true },
+    { name: "VIKRAM", ingredients: "Bumbu rum, campari, sugar syrup,lemon & pineapple juice", price: "£12.50" },
+    { name: "BIG TING *", ingredients: "Spice rum, southern comfort, archers,, pineapple & orange juice", price: "£10.50" },
+    { name: "CLOVER CLUB *", ingredients: "Gin, lemon juice, raspberry syrup, egg white", price: "£10.50",bestSeller: true },
+    { name: "MAI TAI *", ingredients: "White rum, orange curacao, lime juice, dark rum, pineapple juice and vanilla syrup", price: "£10.50" },
+    { name: "BLUE LAGOON *", ingredients: "Vodka, lemon juice, blue curacao, dash of lemonade", price: "£9.50",bestSeller: true },
+    { name: "STRAWBERRY COOLIO *", ingredients: "Gin, strawberry liqueur, archers, caramel syrup fresh strawberry", price: "£12.50",bestSeller: true },
+    { name: "THREESOME *", ingredients: "Tequila, orange juice, grenadine ", price: "£9.50" },
+    { name: "DING DONG ", ingredients: "Tiki Rum, strawberry liquor, malibu, Pineapple juice", price: "£9.50",bestSeller: true },
+    { name: "KIWI GARDEN", ingredients: "Midori, apple schnapps, fresh kiwi, lemon and apple juice", price: "£10.50" },
+    { name: "CHERRY BLOSSOM", ingredients: "Gin, cherry liqueur, plum sake, cranberry, lemon & tonic", price: "£12.50",bestSeller: true },
+    { name: "VICE ADMIRAL SMOKER", ingredients: "Marker’s mark bourbon, peach juice, campari, rhubarb", price: "£12.50" },
+    { name: "ELDERFLOWER GIN", ingredients: "Gin, elderflower, Grenadine, vanilla syrup and lemon juice with prosecco", price: "£10.50",bestSeller: true },
+    { name: "SEXY BACK", ingredients: "Peach Gin, peach liqueur, elderflower, lemon, apple juice and ginger ale", price: "£10.50",bestSeller: true },
+    { name: "LYCHEE MARTINI", ingredients: "Grey goose, Passoa passion fruit liqueur, lychee liqueur, cranberry & pineapple juice", price: "£12.50" },
+    { name: "PINA COLADA ", ingredients: "Bacardi , malibu, pineapple, coconut cream", price: "£10.50",bestSeller: true },
   ],
   Signature: [
     { name: "Tracks Twist", ingredients: "Rum, Elderflower, Grapefruit, Bitters", price: "£11",bestSeller: true },
