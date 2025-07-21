@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const cocktails = {
   Classics: [
-    { name: "VIKRAM", ingredients: "Bumbu rum, campari, sugar syrup,lemon & pineapple juice", price: "£12.50" },
     { name: "BIG TING *", ingredients: "Spice rum, southern comfort, archers,, pineapple & orange juice", price: "£10.50" },
     { name: "CLOVER CLUB *", ingredients: "Gin, lemon juice, raspberry syrup, egg white", price: "£10.50",bestSeller: true },
     { name: "MAI TAI *", ingredients: "White rum, orange curacao, lime juice, dark rum, pineapple juice and vanilla syrup", price: "£10.50" },
@@ -17,20 +16,26 @@ const cocktails = {
     { name: "SEXY BACK", ingredients: "Peach Gin, peach liqueur, elderflower, lemon, apple juice and ginger ale", price: "£10.50",bestSeller: true },
     { name: "LYCHEE MARTINI", ingredients: "Grey goose, Passoa passion fruit liqueur, lychee liqueur, cranberry & pineapple juice", price: "£12.50" },
     { name: "PINA COLADA ", ingredients: "Bacardi , malibu, pineapple, coconut cream", price: "£10.50",bestSeller: true },
+    { name: "AFRICAN RUMBLE *", ingredients: "Baileys, kraken, khalua, vanilla syrup topped with cream", price: "£9.50" },
   ],
   Signature: [
-    { name: "Tracks Twist", ingredients: "Rum, Elderflower, Grapefruit, Bitters", price: "£11",bestSeller: true },
-    { name: "Garden Zen", ingredients: "Gin, Basil, Cucumber, Lemon", price: "£10" },
-    { name: "Spicy Sunset", ingredients: "Tequila, Chilli, Mango, Lime", price: "£11" },
-    { name: "Velvet Smoke", ingredients: "Scotch, Honey, Orange bitters", price: "£12",bestSeller: true },
-    { name: "Royal Blush", ingredients: "Vodka, Raspberry, Rose syrup", price: "£10" },
+    { name: "VIKRUM", ingredients: "Bumbu rum, campari, sugar syrup,lemon & pineapple juice", price: "£12.50", bestSeller: true },
+    { name: "ANGELS & DEVILS", ingredients: "Jack daniels, archers, cranberry juice & rose syrup", price: "£9.50" },
+    { name: "SILKEN WHISPER", ingredients: "Disaranno velvet, tia maria, vodka", price: "£10.50",bestSeller: true },
+    { name: "FIREBALL", ingredients: "Bacardi , malibu, pineapple, coconut cream", price: "£10.50" },
+    { name: "RASVERRY REFRESHER", ingredients: "Crushed rasverry, vodka, lime juice, tonic, sugar syrup", price: "£12.50",bestSeller: true },
+    { name: "EDEN'S SIP", ingredients: "Hendriks, fresh cucumber, elderflower syrup, apple juice", price: "£12.50" },
+    { name: "RIRI", ingredients: "Malibu, Bacardi raspberry, greninande, orange juice, squeeze lime juice", price: "£10.50" },
+    { name: "BITTER SWEET", ingredients: "raspberry vodka, tequila, lime juice, pineapple juice ", price: "£10.50" },
   ],
-  Mocktails: [
-    { name: "Virgin Mojito", ingredients: "Mint, Lime, Sugar, Soda", price: "£6" },
-    { name: "Sunset Cooler", ingredients: "Pineapple, Orange, Grenadine", price: "£6" },
-    { name: "Cucumber Fizz", ingredients: "Cucumber, Lime, Soda, Mint", price: "£6" },
-    { name: "Tropical Zing", ingredients: "Passionfruit, Mango, Lime", price: "£6",bestSeller: true },
-    { name: "Berry Bloom", ingredients: "Mixed berries, Lemon, Soda", price: "£6" },
+  Shooters: [
+    { name: "B-52", ingredients: "Coffee liqueur, Baileys, Grand Marnier", price: "£5",bestSeller: true },
+    { name: "BLOW JOB", ingredients: "khalua, Baileys, Wiped cream", price: "£5" },
+    { name: "BANANA SPLIT", ingredients: "Banana liqueur, Vodka, Blue curacao", price: "£5" },
+    { name: "BLUE KAMIKAZE", ingredients: "Vodka, Blue Curacao Liqueur, Lime Juice", price: "£5",bestSeller: true },
+    { name: "MELON BALL", ingredients: "Melon liqueur, Pineapple juice, Vodka", price: "£5" },
+    { name: "RED-HEADED SLUT", ingredients: "Peach Schnapps, Cranberry juice, Jagermaster", price: "£5" },
+    { name: "TRACKSHOT", ingredients: "Dissarano, Cranberryjuice, Grenadine , Lime juice", price: "£5",bestSeller: true },
   ],
 };
 

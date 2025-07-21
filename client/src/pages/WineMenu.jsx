@@ -2,22 +2,26 @@ import React, { useState } from "react";
 
 const wines = {
   "Red Wine": [
-    { name: "Merlot", description: "Soft, ripe and elegant", price: "£7 / £25", bestSeller: true },
-    { name: "Cabernet Sauvignon", description: "Full-bodied with dark fruit flavours", price: "£8 / £28" },
-    { name: "Malbec", description: "Smooth and rich with plum notes", price: "£7.5 / £27" },
+    { name: "LA BELLE PINOT NOIR", description: "Smooth, fruity, with hints of cherry and spice", price: "£5.90 / £7.60 / £10.40", bestSeller: true },
+    { name: "CUNE RIOJA RESERVA", description: "Rich and earthy with notes of red berries and oak", price: "£6.00 / £7.80 / £9.60" },
+    { name: "LUIS FELIPE EDWARD GRAN RESERVA MERLOT", description: "Velvety and ripe, bursting with plum and mocha", price: "£5.60 / £7.20 / £9.60" },
+    { name: "MARCELO PELLERITI MALBEC", description: "Bold and juicy, layered with dark fruit and spice", price: "£5.60 / £7.20 / £9.60 / £25", bestSeller: true },
+    { name: "BAREFOOT MERLOT", description: "Easy-drinking with soft tannins and blackberry flavours", price: "£5.20 / £6.20 / £8.40", bestSeller: true },
   ],
   "White Wine": [
-    { name: "Sauvignon Blanc", description: "Zesty and fresh with citrus aromas", price: "£7 / £24" },
-    { name: "Chardonnay", description: "Creamy and elegant with oak tones", price: "£7.5 / £26", bestSeller: true },
-    { name: "Pinot Grigio", description: "Light, crisp and refreshing", price: "£6.5 / £22" },
+    { name: "BREAD & BUTTER CHARDONNAY", description: "Creamy and smooth with notes of vanilla and baked apple", price: "£6.00 / £7.80 / £10.40" },
+    { name: "VILLA MARIA MARLBOROUGH SAUVIGNON BLANC", description: "Crisp and zesty with tropical fruit and citrus", price: "£5.90 / £7.60 / £10.20"},
+    { name: "BAREFOOT SAUVIGNON BLANC", description: "Light and refreshing with hints of lime and green apple", price: "£5.60 / £7.20 / £9.60" },
+    { name: "PINOT GRIGIO BREGANZE", description: "Clean and delicate with soft pear and floral notes.", price: "£5.20 / £6.20 / £8.40 / £25" , bestSeller: true },
   ],
   "Rosé": [
-    { name: "Zinfandel Rosé", description: "Sweet and fruity with strawberry notes", price: "£6.5 / £23", bestSeller: true },
-    { name: "Provence Rosé", description: "Delicate and dry with floral aromas", price: "£8 / £29" },
+    { name: "IDEALYSTA ROSATO", description: "Fresh and fruity with notes of red berries and a crisp finish", price: "£7.00 / £8.50 / £10.20", bestSeller: true },
+    { name: "PEYRASSOL", description: "Elegant and dry with delicate floral and strawberry notes", price: "£6.40 / £8.90 / £12.10" },
+    { name: "BAREFOOT WHITE ZINFANDEL", description: "Sweet and juicy with hints of watermelon and peach", price: "£5.20 / £6.60 / £8.70" },
   ],
   "Sparkling": [
-    { name: "Prosecco", description: "Light and bubbly Italian classic", price: "£7 / £26" },
-    { name: "Champagne Brut", description: "Elegant with fine bubbles", price: "£12 / £45", bestSeller: true },
+    { name: "PROSECCO", description: "Light, bubbly, and refreshing with apple and citrus notes", price: "£30", bestSeller: true  },
+    { name: "MOËT & CHANDON", description: "Luxurious and refined with fine bubbles and notes of brioche and stone fruit", price: "£110"},
   ],
 };
 
