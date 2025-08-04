@@ -27,7 +27,7 @@ export default function TicketModal({ isOpen, onClose, eventTitle }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify( ...formData, eventTitle),
+        body: JSON.stringify({ ...formData, eventTitle }),
       });
 
       const data = await res.json();
