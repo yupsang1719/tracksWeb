@@ -13,12 +13,12 @@ const events = [
     tag: "Special",
   },
   {
-    date: "Jun 18, Friday",
-    title: "DNB All Night",
+    date: "September 5, Friday",
+    title: "RUN THE TRACKS",
     time: "8:00 PM",
-    desc: "Featuring: MAXXIMUS, EXHIBIT, JASPIN, OC, TAMIKA, JOSHWANA, JAY WALKER & NEIL PWAH",
-    img: "/Asst/imgs/events/DNB.png",
-    tag: "FREE ENTRY",
+    desc: "Featuring Jazz T, Miracle, Deejay Random, Evil Ed, Alchemist, and DJ Shep. Hosted by Squeaky",
+    img: "/Asst/imgs/events/runthetrackssqr.png",
+    tag: "Special",
   },
   {
     date: "Every Saturday",
