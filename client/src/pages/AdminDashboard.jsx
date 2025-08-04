@@ -49,7 +49,7 @@ export default function AdminDashboard() {
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="px-4 py-2 border rounded shadow"
+          className="px-4 py-2 border rounded shadow text-blue-700"
         >
           <option value="All">All Events</option>
           {[...new Set(bookings.map((b) => b.event))].map((event) => (
@@ -83,7 +83,7 @@ export default function AdminDashboard() {
               <th className="p-2 border">Payment ID</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-blue-600">
             {filteredBookings.map((b) => (
               <tr
                 key={b._id}
