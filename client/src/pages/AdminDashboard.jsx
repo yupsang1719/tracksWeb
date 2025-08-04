@@ -7,7 +7,7 @@ export default function AdminDashboard() {
   const [filter, setFilter] = useState("All");
 
   useEffect(() => {
-    fetch("/api/bookings")
+    fetch("/api/admin/bookings")
       .then((res) => res.json())
       .then((data) => setBookings(data))
       .catch((err) => console.error("Failed to fetch bookings", err));
@@ -42,7 +42,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <section className="p-6 bg-[#f9fafb] min-h-screen">
+    <section className="p-6 bg-[#0F3C5C] min-h-screen text-white">
       <h2 className="text-3xl font-bold mb-4">📋 Admin Ticket Dashboard</h2>
 
       <div className="flex flex-wrap gap-4 mb-6">
