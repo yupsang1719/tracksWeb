@@ -1,89 +1,111 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
 export default function AdminDashboard() {
   const [bookings, setBookings] = useState([]);
+  const [filter, setFilter] = useState("All");
 
   useEffect(() => {
-    const fetchBookings = async () => {
-      try {
-        const res = await axios.get("/api/admin/bookings"); // Adjust URL as needed
-        setBookings(res.data);
-      } catch (err) {
-        console.error("Error fetching bookings:", err);
-      }
-    };
-
-    fetchBookings();
+    fetch("/api/bookings")
+      .then((res) => res.json())
+      .then((data) => setBookings(data))
+      .catch((err) => console.error("Failed to fetch bookings", err));
   }, []);
+
+  const filteredBookings =
+    filter === "All"
+      ? bookings
+      : bookings.filter((b) => b.event === filter);
+
+  const totalTickets = filteredBookings.reduce((sum, b) => sum + b.tickets, 0);
 
   const downloadPDF = () => {
     const doc = new jsPDF();
-    doc.text("Vikrum Fest Bookings", 14, 15);
-
-    const tableData = bookings.map((b, i) => [
-      i + 1,
-      b.name,
-      b.email,
-      b.tickets,
-      b.ticketNumber || "N/A",
-      b.event,
-      b.paymentIntentId,
-      new Date(b.createdAt).toLocaleString(),
-    ]);
+    doc.setFontSize(18);
+    doc.text(`${filter} Bookings`, 14, 20);
 
     autoTable(doc, {
-      startY: 20,
-      head: [["#", "Name", "Email", "Tickets", "Ticket No.", "Event", "Payment ID", "Date"]],
-      body: tableData,
+      startY: 30,
+      head: [["Name", "Email", "Tickets", "Ticket No", "Payment ID"]],
+      body: filteredBookings.map((b) => [
+        b.name,
+        b.email,
+        b.tickets,
+        b.ticketNumber,
+        b.paymentIntentId,
+      ]),
+      styles: { fontSize: 10 },
     });
 
-    doc.save("bookings.pdf");
+    doc.save(`${filter}-bookings.pdf`);
   };
 
   return (
-    <div className="p-6 bg-[#0F3C5C] min-h-screen text-white">
-      <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+    <section className="p-6 bg-[#f9fafb] min-h-screen">
+      <h2 className="text-3xl font-bold mb-4">📋 Admin Ticket Dashboard</h2>
 
-      <button
-        onClick={downloadPDF}
-        className="mb-4 bg-[#6D9999] hover:bg-[#5b8686] text-white px-4 py-2 rounded"
-      >
-        Download PDF
-      </button>
+      <div className="flex flex-wrap gap-4 mb-6">
+        <select
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          className="px-4 py-2 border rounded shadow"
+        >
+          <option value="All">All Events</option>
+          {[...new Set(bookings.map((b) => b.event))].map((event) => (
+            <option key={event} value={event}>{event}</option>
+          ))}
+        </select>
 
-      <div className="overflow-x-auto bg-white text-black rounded shadow">
-        <table className="min-w-full text-sm text-left">
-          <thead className="bg-[#6D9999] text-white">
+        {filter !== "All" && (
+          <button
+            onClick={downloadPDF}
+            className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700"
+          >
+            Download PDF
+          </button>
+        )}
+      </div>
+
+      <p className="text-lg mb-4">
+        🎟️ Total Tickets Sold: <span className="font-bold">{totalTickets}</span>
+      </p>
+
+      <div className="overflow-x-auto">
+        <table className="min-w-full border border-gray-200 rounded bg-white shadow-md text-sm">
+          <thead className="bg-gray-100 text-gray-700">
             <tr>
-              <th className="px-4 py-2">#</th>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Email</th>
-              <th className="px-4 py-2">Tickets</th>
-              <th className="px-4 py-2">Ticket No.</th>
-              <th className="px-4 py-2">Event</th>
-              <th className="px-4 py-2">Payment ID</th>
-              <th className="px-4 py-2">Date</th>
+              <th className="p-2 border">Name</th>
+              <th className="p-2 border">Email</th>
+              <th className="p-2 border">Event</th>
+              <th className="p-2 border">Tickets</th>
+              <th className="p-2 border">Ticket Number</th>
+              <th className="p-2 border">Payment ID</th>
             </tr>
           </thead>
           <tbody>
-            {bookings.map((b, index) => (
-              <tr key={b._id} className="border-t">
-                <td className="px-4 py-2">{index + 1}</td>
-                <td className="px-4 py-2">{b.name}</td>
-                <td className="px-4 py-2">{b.email}</td>
-                <td className="px-4 py-2">{b.tickets}</td>
-                <td className="px-4 py-2">{b.ticketNumber}</td>
-                <td className="px-4 py-2">{b.event}</td>
-                <td className="px-4 py-2">{b.paymentIntentId}</td>
-                <td className="px-4 py-2">{new Date(b.createdAt).toLocaleString()}</td>
+            {filteredBookings.map((b) => (
+              <tr
+                key={b._id}
+                className={`border ${
+                  b.event === "Vikrum Fest 2025"
+                    ? "bg-yellow-50"
+                    : b.event === "RUN THE TRACKS"
+                    ? "bg-blue-50"
+                    : "bg-white"
+                }`}
+              >
+                <td className="p-2 border">{b.name}</td>
+                <td className="p-2 border">{b.email}</td>
+                <td className="p-2 border">{b.event}</td>
+                <td className="p-2 border">{b.tickets}</td>
+                <td className="p-2 border">{b.ticketNumber}</td>
+                <td className="p-2 border">{b.paymentIntentId}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   );
 }
