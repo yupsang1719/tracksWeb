@@ -4,7 +4,7 @@ import { loadStripe } from "@stripe/stripe-js";
 // Replace with your actual Stripe publishable key
 const stripePromise = loadStripe("pk_live_51Rak0GDGDVBsojmjhJ7OHFqMugy6mi0NBzjnfbUhYNU8dSUblejWgmSlw4RqZkRt3FPqpmfxQAz6cJwluoDv8iFr00qS1jdWQ5");
 
-export default function TicketModal({ isOpen, onClose }) {
+export default function TicketModal({ isOpen, onClose, eventTitle }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +27,7 @@ export default function TicketModal({ isOpen, onClose }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData, eventTitle),
       });
 
       const data = await res.json();
@@ -61,6 +61,7 @@ export default function TicketModal({ isOpen, onClose }) {
           &times;
         </button>
         <h2 className="text-2xl font-bold mb-4">Book Your Tickets</h2>
+        <p className="text-[#6D9999] mb-4">For: <span className="font-semibold text-black">{eventTitle}</span></p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             name="name"

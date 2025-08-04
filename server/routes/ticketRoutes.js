@@ -5,7 +5,7 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 router.post("/create-checkout-session", async (req, res) => {
-  const { name, email, tickets, message } = req.body;
+  const { name, email, tickets, message, eventTitle } = req.body;
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -30,7 +30,7 @@ router.post("/create-checkout-session", async (req, res) => {
         email,
         tickets: String(tickets),
         message,
-        event: "Vikrum Fest 2025",
+        event: eventTitle,
       },
       success_url: "https://tracksaldershot.co.uk/success",
       cancel_url: "https://tracksaldershot.co.uk/cancel",

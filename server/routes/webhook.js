@@ -4,11 +4,19 @@ const Booking = require("../models/Booking");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const nodemailer = require("nodemailer");
 
-const generateTicketNumber = () => {
-  const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, "").slice(0, 12); // YYYYMMDDHHMM
-  const random = Math.random().toString(36).substring(2, 6).toUpperCase(); // Random 4-letter code
-  return `VIK-${timestamp}-${random}`;
+const generateTicketNumber = (eventTitle = "GEN") => {
+  const prefix = eventTitle
+    .split(" ")[0] // First word of event title
+    .replace(/[^A-Z0-9]/gi, "") // Clean non-alphanumeric
+    .substring(0, 3)
+    .toUpperCase();
+
+  const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, "").slice(0, 12);
+  const random = Math.random().toString(36).substring(2, 6).toUpperCase();
+
+  return `${prefix}-${timestamp}-${random}`;
 };
+
 
 
 router.post("/", express.raw({ type: "application/json" }), async (req, res) => {
@@ -34,7 +42,7 @@ router.post("/", express.raw({ type: "application/json" }), async (req, res) => 
         message: session.metadata.message || "",
         event: session.metadata.event || "Unknown",
         paymentIntentId: session.payment_intent,
-        ticketNumber: generateTicketNumber(),
+        ticketNumber: generateTicketNumber(session.metadata.event),
       });
 
       await booking.save();
@@ -49,27 +57,28 @@ router.post("/", express.raw({ type: "application/json" }), async (req, res) => 
       });
 
       const mailOptions = {
-        from: `"The Tracks Team" <${process.env.EMAIL_USER}>`,
-        to: booking.email,
-        subject: "🎫 Your VIKRUM Fest Entry Pass",
-        text: `
-Hi ${booking.name},
+          from: `"The Tracks Team" <${process.env.EMAIL_USER}>`,
+          to: booking.email,
+          subject: `🎫 Your Entry Pass for ${booking.event}`,
+          text: `
+        Hi ${booking.name},
 
-🎉 Your ticket(s) to "${booking.event}" have been confirmed!
+        🎉 Your ticket(s) to "${booking.event}" have been confirmed!
 
-Details:
-- Name: ${booking.name}
-- Tickets: ${booking.tickets}
-- Event: ${booking.event}
-- Ticket Number: ${booking.ticketNumber}
-- Payment ID: ${booking.paymentIntentId}
+        Details:
+        - Name: ${booking.name}
+        - Tickets: ${booking.tickets}
+        - Event: ${booking.event}
+        - Ticket Number: ${booking.ticketNumber}
+        - Payment ID: ${booking.paymentIntentId}
 
-Please show this email as your entry pass at the venue.
+        Please show this email as your entry pass at the venue.
 
-See you there!
-— The Tracks Team
-        `,
-      };
+        See you there!
+        — The Tracks Team
+          `,
+        };
+
 
       await transporter.sendMail(mailOptions);
       console.log("✅ Email confirmation sent");
