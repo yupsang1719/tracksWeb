@@ -9,7 +9,7 @@ const events = [
     date: "August 24, 2025",
     image: "/Asst/imgs/vikrum-1.png",
     description:
-      "Join us for Vikrum Fest – a night of vibrant music, good vibes and an unforgettable atmosphere.",
+      "Celebrate the 3rd VIKRUM Fest at Tracks on Sunday, 24 August 2025! Enjoy a vibrant mix of live acoustic performances, full band shows, and DJ sets in the garden. Get a free rum punch on entry and explore over 100 rum flavours, cocktails, sisha, and a tropical terrace garden. 🎶 Tickets: £5 Early Bird, £10 Standard, £15 at the door. Follow us on socials for artist reveals. This is your ultimate end-of-summer bash!",
     deadline: "2025-08-15T23:59:59",
   },
   {
@@ -17,7 +17,7 @@ const events = [
     date: "September 5, 2025",
     image: "/Asst/imgs/runthetracks-cover.png",
     description:
-      "Dance into the fall with live DJs, soulful performances, and energetic vibes at Autumn Beats!",
+      "Run The Tracks is back — a night dedicated to real Hip Hop and Rap energy at Tracks Aldershot! Featuring Jazz T, Miracle, Deejay Random, Evil Ed, Alchemist, and DJ Shep. Hosted by Squeaky. Free entry before 8 PM. £5 online. £10 on the door after 8 PM. 05 September 2025, 8:00 PM – 2:00 AM at Tracks, GU11 1HT. Expect gritty beats, authentic lyricism, and an underground vibe that'll keep the energy flowing all night.",
     deadline: "2025-09-04T23:59:59",
   },
 ];
