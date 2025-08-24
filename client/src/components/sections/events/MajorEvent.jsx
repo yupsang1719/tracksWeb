@@ -4,14 +4,14 @@ import TicketModal from "./TicketModal";
 import CountdownTimer from "../../CountDownTimer";
 
 const events = [
-  {
-    title: "Vikrum Fest 2025",
-    date: "August 24, 2025",
-    image: "/Asst/imgs/vikrum-1.png",
-    description:
-      "Celebrate the 3rd VIKRUM Fest at Tracks on Sunday, 24 August 2025! Enjoy a vibrant mix of live acoustic performances, full band shows, and DJ sets in the garden. Get a free rum punch on entry and explore over 100 rum flavours, cocktails, sisha, and a tropical terrace garden. 🎶 Tickets: £5 Early Bird, £10 Standard, £15 at the door. Follow us on socials for artist reveals. This is your ultimate end-of-summer bash!",
-    deadline: "2025-08-15T23:59:59",
-  },
+  // {
+  //   title: "Vikrum Fest 2025",
+  //   date: "August 24, 2025",
+  //   image: "/Asst/imgs/vikrum-1.png",
+  //   description:
+  //     "Celebrate the 3rd VIKRUM Fest at Tracks on Sunday, 24 August 2025! Enjoy a vibrant mix of live acoustic performances, full band shows, and DJ sets in the garden. Get a free rum punch on entry and explore over 100 rum flavours, cocktails, sisha, and a tropical terrace garden. 🎶 Tickets: £5 Early Bird, £10 Standard, £15 at the door. Follow us on socials for artist reveals. This is your ultimate end-of-summer bash!",
+  //   deadline: "2025-08-15T23:59:59",
+  // },
   {
     title: "RUN THE TRACKS",
     date: "September 5, 2025",
@@ -69,6 +69,12 @@ export default function MajorEvent() {
                   className="bg-white text-[#0F3C5C] py-2 px-4 rounded font-semibold hover:bg-gray-100 transition"
                 >
                   View Details
+                </button>
+                <button
+                  onClick={() => setTicketOpen(index)}
+                  className="bg-yellow-500 text-black py-2 px-4 rounded font-bold hover:bg-yellow-400 transition animate-pulse"
+                >
+                  Get Tickets
                 </button>
               </div>
             </div>
