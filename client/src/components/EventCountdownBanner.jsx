@@ -36,14 +36,14 @@ export default function CountdownBanner({ onTicketClick }) {
   return (
     <div className="sticky top-0 z-50 backdrop-blur bg-[#0F3C5C]/90 text-white p-4 md:p-6 flex flex-col md:flex-row justify-between items-center gap-4 shadow-xl border-b border-white/10">
       <div className="text-center md:text-left">
-        <h3 className="text-lg md:text-2xl font-bold">🎉 Vikrum Fest 2025 is coming!</h3>
+        <h3 className="text-lg md:text-2xl font-bold">🎉 Run The Tracks is coming!</h3>
         <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-1 text-[#6D9999] text-sm md:text-base">
-          <span className="flex items-center gap-1"><FaCalendarAlt /> 24 August 2025</span>
-          <span className="flex items-center gap-1"><FaClock /> 6:00 PM</span>
+          <span className="flex items-center gap-1"><FaCalendarAlt /> 5 September 2025</span>
+          <span className="flex items-center gap-1"><FaClock /> 8:00 PM</span>
           <span className="flex items-center gap-1"><FaMapMarkerAlt /> The Tracks, Aldershot</span>
         </div>
         <p className="mt-2 text-sm md:text-base">
-           <strong>Limited Standard Tickets</strong> available! Book yours before they run out!
+           <strong>Limited Tickets</strong> available! Book yours before they run out!
         </p>
       </div>
 
@@ -70,7 +70,7 @@ export default function CountdownBanner({ onTicketClick }) {
             <TicketModal
                 isOpen={ticketOpen}
                 onClose={() => setTicketOpen(false)}
-                eventTitle="Vikrum Fest 2025"
+                eventTitle="RUN THE TRACKS"
             />
             )}
 
