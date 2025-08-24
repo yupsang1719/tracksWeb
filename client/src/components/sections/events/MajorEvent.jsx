@@ -18,7 +18,7 @@ const events = [
     image: "/Asst/imgs/runthetracks-cover.png",
     description:
       "Run The Tracks is back — a night dedicated to real Hip Hop and Rap energy at Tracks Aldershot! Featuring Jazz T, Miracle, Deejay Random, Evil Ed, Alchemist, and DJ Shep. Hosted by Squeaky. Free entry before 8 PM. £5 online. £10 on the door after 8 PM. 05 September 2025, 8:00 PM – 2:00 AM at Tracks, GU11 1HT. Expect gritty beats, authentic lyricism, and an underground vibe that'll keep the energy flowing all night.",
-    deadline: "2025-09-04T23:59:59",
+    deadline: "2025-09-05T20:00:00",
   },
 ];
 
