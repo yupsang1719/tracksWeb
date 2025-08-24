@@ -15,7 +15,7 @@ export default function CountdownBanner({ onTicketClick }) {
   }, []);
 
   function getTimeRemaining() {
-    const eventDate = new Date("2025-08-24T18:00:00");
+    const eventDate = new Date("2025-09-5T20:00:00");
     const now = new Date();
     const total = eventDate - now;
     const seconds = Math.floor((total / 1000) % 60);
