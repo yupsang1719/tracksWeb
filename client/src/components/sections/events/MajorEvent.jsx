@@ -70,12 +70,6 @@ export default function MajorEvent() {
                 >
                   View Details
                 </button>
-                <button
-                  onClick={() => setTicketOpen(index)}
-                  className="bg-yellow-500 text-black py-2 px-4 rounded font-bold hover:bg-yellow-400 transition animate-pulse"
-                >
-                  Get Tickets
-                </button>
               </div>
             </div>
           </div>
