@@ -5,7 +5,7 @@ const events = [
   {
     title: "VIKRUM Festival",
     date: "Sunday, Auguust 24",
-    image: "/Asst/imgs/vikrum-1.png",
+    image: "/Asst/imgs/scribes.png",
     description: "A night of dance, drinks, and DJs spinning until late!",
     ticketLink: "https://ticketlink.com",
   },

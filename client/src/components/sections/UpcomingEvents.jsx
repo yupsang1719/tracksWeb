@@ -5,29 +5,29 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 // Sample events
 const events = [
   {
-    date: "August 24, Sunday",
-    title: "VIKRUM FESTIVAL",
-    time: "12:00 AM",
-    desc: "Let's Celebrate the 3rd Vikrum Festival together",
-    img: "/Asst/imgs/events/vikrum.jpeg",
+    date: "Every Wednesday & Thursday",
+    title: "Discount Night - Karaoke Competition",
+    time: "8:00 PM",
+    desc: "The winning singer takes home £100 CASH on Thursday night!",
+    img: "/Asst/imgs/events/dn.png",
+    tag: "Special",
+  },
+  {
+    date: "October 03, Friday",
+    title: "The Scribes @Tracks",
+    time: "9:00 PM",
+    desc: "The Scribes bring an award-winning live hip hop show to Tracks on Friday, Oct 3 from 9:00 PM with support from Olski & The Groove Surgeons. Free entry – arrive early!",
+    img: "/Asst/imgs/scribes.png",
     tag: "Special",
   },
   {
     date: "September 5, Friday",
-    title: "RUN THE TRACKS",
+    title: "The Evil Night : Halloween",
     time: "8:00 PM",
-    desc: "Featuring Jazz T, Miracle, Deejay Random, Evil Ed, Alchemist, and DJ Shep. Hosted by Squeaky",
-    img: "/Asst/imgs/events/runthetrackssqr.png",
+    desc: "This Halloween, Tracks transforms into a dark haven for three nights of spine-tingling energy and music",
+    img: "/Asst/imgs/events/evilNight.png",
     tag: "Special",
-  },
-  {
-    date: "Every Saturday",
-    title: "LIVE MUSIC",
-    time: "8:00 PM",
-    desc: "Enjoy the Live Performance every week with different Band",
-    img: "/Asst/imgs/events/event-1.jpg",
-    tag: "Party",
-  },
+  }
 ];
 
 export default function UpcomingEvents() {

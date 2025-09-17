@@ -15,10 +15,10 @@ const Home = () => {
       <AboutMini />
       <ParallaxBreak />
       <UpcomingEvents />
-      <EventCountdownBanner
+      {/* <EventCountdownBanner
         eventTitle="Vikrum Fest 2025"
         eventDate="2025-08-24T18:00:00"
-      />
+      /> */}
       <BarIntro />
       <GalleryPreview />
       <ParallaxBreakSmall />
