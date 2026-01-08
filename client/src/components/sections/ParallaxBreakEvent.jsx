@@ -5,7 +5,7 @@ export default function ParallaxBreak() {
     <section
       className="relative h-screen w-full bg-cover bg-center"
       style={{
-        backgroundImage: "url('/Asst/imgs/vikrum-1.png')",
+        backgroundImage: "url('/Asst/imgs/galary/secondPhase3.jpg)",
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundSize: "cover",
