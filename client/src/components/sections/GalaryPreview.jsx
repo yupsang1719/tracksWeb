@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
 const previewImages = [
-  { src: "/Asst/imgs/galary/gallery-6.jpg", alt: "Open Mic", category: "Open Mic" },
-  { src: "/Asst/imgs/galary/gallery-2.jpg", alt: "Disco Karaoke", category: "Karaoke" },
-  { src: "/Asst/imgs/galary/gallery-9.jpg", alt: "Ladies Night", category: "Ladies" },
-  { src: "/Asst/imgs/galary/gallery-4.jpg", alt: "Live Music", category: "Live" },
-  { src: "/Asst/imgs/galary/gallery-5.jpg", alt: "Rainbow Karaoke", category: "Rainbow" },
-  { src: "/Asst/imgs/galary/gallery-6.jpg", alt: "Discount Night", category: "Discount" },
+  { src: "/Asst/imgs/galary/secondPhase3.jpg", alt: "Open Mic", category: "Open Mic" },
+  { src: "/Asst/imgs/galary/secondPhase5.jpg", alt: "Disco Karaoke", category: "Karaoke" },
+  { src: "/Asst/imgs/galary/secondPhase6.jpg", alt: "Ladies Night", category: "Ladies" },
+  { src: "/Asst/imgs/galary/secondPhase4.jpg", alt: "Live Music", category: "Live" },
+  { src: "/Asst/imgs/galary/secondPhase7.jpg", alt: "Rainbow Karaoke", category: "Rainbow" },
+  { src: "/Asst/imgs/galary/secondPhase8.jpg", alt: "Discount Night", category: "Discount" },
 ];
 
 export default function GalleryPreview() {

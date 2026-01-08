@@ -3,18 +3,18 @@ import React, { useState } from "react";
 // Sample data for regular events
 const regularEvents = [
   {
-    day: "Monday",
-    title: "Open Mic",
-    host: "Jen N Tonic",
-    flyer: "/Asst/imgs/events/openMic.jpeg",
-    description: "Join us for an open mic night supporting local talent!",
+    day: "Sunday",
+    title: "Spin The Wheel",
+    host: "Rainbow Entertainment",
+    flyer: "/Asst/imgs/events/rainbowKaraoke.jpeg",
+    description: "The vibes are unreal, the spins were lucky, and the crowd went wild!",
   },
   {
     day: "Tuesday",
-    title: "Disco Karaoke",
-    host: "Mark",
+    title: "Exclusive Night",
+    host: "Mark Farren",
     flyer: "/Asst/imgs/events/discoKaraoke.jpeg",
-    description: "Sing your heart out with our disco karaoke hosted by Mark.",
+    description: "Karaoke Night || Come for the deals, stay for the vibes. your tuesday just got exclusive",
   },
   {
     day: "Wednesday & Thursday",
@@ -25,24 +25,17 @@ const regularEvents = [
   },
   {
     day: "Friday",
-    title: "Girls Night",
+    title: "Tracks Hour",
     host: "DJ MDK",
-    flyer: "/Asst/imgs/events/girlNight.jpeg",
-    description: "Happy Hour on Cocktails. DJ MDK live. The best way to start the weekend!",
+    flyer: "/Asst/imgs/events/anv1.jpg",
+    description: "Cocktails - 2 for £15 || House Spirits £4.50 || Shots From £2 || DJ MDK live. ",
   },
   {
     day: "Saturday",
-    title: "Live Band",
-    host: "Different band each week",
-    flyer: "/Asst/imgs/events/liveMusic.jpeg",
-    description: "Live music every Saturday. Discover new bands weekly!",
-  },
-  {
-    day: "Sunday",
-    title: "Rainbow Karaoke",
-    host: "Brian & Roy",
-    flyer: "/Asst/imgs/events/rainbowKaraoke.jpeg",
-    description: "Colourful, inclusive karaoke fun with Brian and Roy!",
+    title: "Tracks Hour",
+    host: "DJ Trinni",
+    flyer: "/Asst/imgs/events/anv2.jpg",
+    description: "Cocktails - 2 for £15 || House Spirits £4.50 || Shots From £2 || DJ MDK live. ",
   },
 ];
 

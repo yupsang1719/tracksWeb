@@ -5,29 +5,21 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 // Sample events
 const events = [
   {
-    date: "Every Wednesday & Thursday",
-    title: "Discount Night - Karaoke Competition",
-    time: "8:00 PM",
-    desc: "The winning singer takes home £100 CASH on Thursday night!",
-    img: "/Asst/imgs/events/dn.png",
+    date: "March 07, Sunday",
+    title: "Live Band - Sweat Violet",
+    time: "Time Will Published Soon",
+    desc: "Sweet Violet seek alwasy to take music and performance to it's high octane limits and beyond",
+    img: "/Asst/imgs/events/sweatviolet.png",
     tag: "Special",
   },
   {
-    date: "October 03, Friday",
-    title: "The Scribes @Tracks",
-    time: "9:00 PM",
-    desc: "The Scribes bring an award-winning live hip hop show to Tracks on Friday, Oct 3 from 9:00 PM with support from Olski & The Groove Surgeons. Free entry – arrive early!",
-    img: "/Asst/imgs/scribes.png",
+    date: "March 21, Saturday",
+    title: "Tracks Second Anniversary",
+    time: "Time Will be Published Soon",
+    desc: "This is going to be Epic Experience, More Information on the way",
+    img: "/Asst/imgs/galary/secondPhase7.jpg",
     tag: "Special",
   },
-  {
-    date: "September 5, Friday",
-    title: "The Evil Night : Halloween",
-    time: "8:00 PM",
-    desc: "This Halloween, Tracks transforms into a dark haven for three nights of spine-tingling energy and music",
-    img: "/Asst/imgs/events/evilNight.png",
-    tag: "Special",
-  }
 ];
 
 export default function UpcomingEvents() {

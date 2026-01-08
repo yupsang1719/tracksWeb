@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 const galleryImages = [
-  "/Asst/imgs/galary/gallery-1.jpg",
-  "/Asst/imgs/galary/gallery-2.jpg",
-  "/Asst/imgs/galary/gallery-3.jpg",
-  "/Asst/imgs/galary/gallery-4.jpg",
-  "/Asst/imgs/galary/gallery-5.jpg",
-  "/Asst/imgs/galary/gallery-6.jpg",
-  "/Asst/imgs/galary/gallery-7.jpg",
+  "/Asst/imgs/galary/secondPhase8.jpg",
+  "/Asst/imgs/galary/secondPhase3.jpg",
+  "/Asst/imgs/galary/secondPhase11.jpg",
+  "/Asst/imgs/galary/secondPhase9.jpg",
+  "/Asst/imgs/galary/secondPhase13.jpg",
+  "/Asst/imgs/galary/secondPhase15.jpg",
+  "/Asst/imgs/galary/secondPhase18.jpg",
   "/Asst/imgs/galary/gallery-8.jpg",
-  "/Asst/imgs/galary/gallery-9.jpg",
+  "/Asst/imgs/galary/secondPhase19.jpg",
   "/Asst/imgs/galary/gallery-10.jpg",
+  "/Asst/imgs/galary/secondPhase1.jpg",
+  "/Asst/imgs/galary/secondPhase2.jpg",
+  "/Asst/imgs/galary/secondPhase4.jpg",
+  "/Asst/imgs/galary/secondPhase12.jpg",
+  "/Asst/imgs/galary/secondPhase14.jpg",
+  "/Asst/imgs/galary/secondPhase15.jpg",
+  "/Asst/imgs/galary/secondPhase17.jpg",
 ];
 export default function GalleryPreview() {
   const [activeIndex, setActiveIndex] = useState(null);

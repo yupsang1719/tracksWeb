@@ -4,29 +4,13 @@ import TicketModal from "./TicketModal";
 import CountdownTimer from "../../CountDownTimer";
 
 const events = [
-  // {
-  //   title: "Vikrum Fest 2025",
-  //   date: "August 24, 2025",
-  //   image: "/Asst/imgs/vikrum-1.png",
-  //   description:
-  //     "Celebrate the 3rd VIKRUM Fest at Tracks on Sunday, 24 August 2025! Enjoy a vibrant mix of live acoustic performances, full band shows, and DJ sets in the garden. Get a free rum punch on entry and explore over 100 rum flavours, cocktails, sisha, and a tropical terrace garden. 🎶 Tickets: £5 Early Bird, £10 Standard, £15 at the door. Follow us on socials for artist reveals. This is your ultimate end-of-summer bash!",
-  //   deadline: "2025-08-15T23:59:59",
-  // },
   {
-    title: "The Scribes",
-    date: "October 3, 2025",
-    image: "/Asst/imgs/scribes.png",
+    title: "Live Band - Sweat Violet",
+    date: "March 07, Sunday",
+    image: "/Asst/imgs/events/sweatviolet.png",
     description:
-      "The Scribes Live at Tracks – Friday, October 3rd from 9:00 PM. We’re ecstatic to welcome The Scribes, a multi award-winning hip hop act, to Tracks Aldershot for an unmissable night of beatboxing, freestyle, crowd interaction, and block party vibes. Festival favourites with appearances at Glastonbury, Wireless, WOMAD, Isle of Wight, Latitude and more, they’ve shared the stage with Wu-Tang Clan, Dizzee Rascal, Kelis, Rag N Bone Man, Jurassic 5, De La Soul and many others. Critically acclaimed as 'The UK’s hottest hip hop' by 24/7 Magazine. Awards include Best UK Urban Act (Exposure Music Awards) and Best Live Act (EatMusic Radio Awards). Support act: Olski & The Groove Surgeons. FREE ENTRY – arrive early, this will be a busy one!",
-    deadline: "2025-10-03T20:00:00",
-  },
-  {
-    title: "The Evil Night : Halloween",
-    date: "Ocoter 31, 2025",
-    image: "/Asst/imgs/evilNight.png",
-    description:
-      "The Evil Night at Tracks – October 29th to 31st. This Halloween, Tracks transforms into a dark haven for three nights of spine-tingling energy and music. Kicking off on Wednesday and Thursday, Discount Night takes a sinister twist with blood-soaked vibes and DJ MDK on the decks. On Friday, the finale brings the ultimate Halloween experience – a Drum & Bass takeover: Sound of Evil with DJ Neyullp. Expect haunting beats, chilling visuals, and a dancefloor packed with costumed creatures until late.Award-winning DJs and an atmosphere like no other make this the Halloween event you cannot miss. Whether you come for the mid-week madness or the Friday night mayhem, prepare yourself for The Evil Night.FREE ENTRY on Discount Nights (Oct 29 & 30). Special Halloween Drum & Bass event on Oct 31 – arrive early, this will be a busy one!",
-    deadline: "2025-10-31T20:00:00",
+      "Sweet Violet (SVT) are a four piece hard and heavy rock and roll band based in in Guildford, looking to deliver authentic, unrelenting and explosive rock and roll music to audiences everywhere. Specializing in blues-driven Hard Rock and Heavy Metal inspired by the 1970s, Sweet Violet seek always to take music and performance to it's high octane limits and beyond.",
+      deadline: "2026-03-07T20:00:00",
   },
 ];
 
