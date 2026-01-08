@@ -27,14 +27,14 @@ const regularEvents = [
     day: "Friday",
     title: "Tracks Hour",
     host: "DJ MDK",
-    flyer: "/Asst/imgs/events/anv1.jpg",
+    flyer: "/Asst/imgs/galary/secondPhase18.jpg",
     description: "Cocktails - 2 for £15 || House Spirits £4.50 || Shots From £2 || DJ MDK live. ",
   },
   {
     day: "Saturday",
     title: "Tracks Hour",
     host: "DJ Trinni",
-    flyer: "/Asst/imgs/events/anv2.jpg",
+    flyer: "/Asst/imgs/galary/secondPhase3.jpg",
     description: "Cocktails - 2 for £15 || House Spirits £4.50 || Shots From £2 || DJ MDK live. ",
   },
 ];

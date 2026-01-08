@@ -9,7 +9,7 @@ const events = [
     title: "Live Band - Sweat Violet",
     time: "Time Will Published Soon",
     desc: "Sweet Violet seek alwasy to take music and performance to it's high octane limits and beyond",
-    img: "/Asst/imgs/events/sweatviolet.png",
+    img: "/Asst/imgs/galary/secondPhase20.jpg",
     tag: "Special",
   },
   {
@@ -17,7 +17,7 @@ const events = [
     title: "Tracks Second Anniversary",
     time: "Time Will be Published Soon",
     desc: "This is going to be Epic Experience, More Information on the way",
-    img: "/Asst/imgs/galary/secondPhase7.jpg",
+    img: "/Asst/imgs/galary/secondPhase21.jpg",
     tag: "Special",
   },
 ];

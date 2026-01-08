@@ -7,7 +7,7 @@ const events = [
   {
     title: "Live Band - Sweat Violet",
     date: "March 07, Sunday",
-    image: "/Asst/imgs/events/sweatviolet.png",
+    image: "/Asst/imgs/galary/secondPhase20.jpg",
     description:
       "Sweet Violet (SVT) are a four piece hard and heavy rock and roll band based in in Guildford, looking to deliver authentic, unrelenting and explosive rock and roll music to audiences everywhere. Specializing in blues-driven Hard Rock and Heavy Metal inspired by the 1970s, Sweet Violet seek always to take music and performance to it's high octane limits and beyond.",
       deadline: "2026-03-07T20:00:00",
