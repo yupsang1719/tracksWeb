@@ -59,10 +59,10 @@ export default function Footer() {
           <ul className="space-y-1 text-gray-700 text-sm">
             <li>Monday: 3–11 pm</li>
             <li>Tuesday: 3–11:30 pm</li>
-            <li>Wednesday: 3 pm–1 am</li>
-            <li>Thursday: 3 pm–1 am</li>
-            <li>Friday: 3 pm–1 am</li>
-            <li>Saturday: 12 pm–1 am</li>
+            <li>Wednesday: 3 pm–12am</li>
+            <li>Thursday: 3 pm–1:30am</li>
+            <li>Friday: 3 pm–1:30am</li>
+            <li>Saturday: 12 pm–1:30am</li>
             <li>Sunday: 12–11 pm</li>
           </ul>
         </div>
