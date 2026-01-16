@@ -5,12 +5,20 @@ import CountdownTimer from "../../CountDownTimer";
 
 const events = [
   {
-    title: "Live Band - Sweat Violet",
-    date: "March 07, Sunday",
-    image: "/Asst/imgs/galary/secondPhase20.jpg",
+    title: "Live Band - Sweet Violet",
+    date: "Feb 28, Saturday",
+    image: "/Asst/imgs/events/Cover-sweet-violet.png",
     description:
       "Sweet Violet (SVT) are a four piece hard and heavy rock and roll band based in in Guildford, looking to deliver authentic, unrelenting and explosive rock and roll music to audiences everywhere. Specializing in blues-driven Hard Rock and Heavy Metal inspired by the 1970s, Sweet Violet seek always to take music and performance to it's high octane limits and beyond.",
-      deadline: "2026-03-07T20:00:00",
+      deadline: "2026-02-28T21:30:00",
+  },
+  {
+    title: "TRACKS IS TURNING 2!",
+    date: "March 21, Saturday",
+    image: "/Asst/imgs/events/Anniversary cover.png",
+    description:
+      "TRACKS IS TURNING 2! Join us as we celebrate 2 years of music, drinks, and unforgettable nights at Tracks. 21st March. We’re planning something special to mark the occasion Details coming soon.  Save the date and celebrate with us.",
+      deadline: "2026-03-21T19:30:00",
   },
 ];
 

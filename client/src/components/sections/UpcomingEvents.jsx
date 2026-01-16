@@ -5,19 +5,19 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 // Sample events
 const events = [
   {
-    date: "March 07, Sunday",
-    title: "Live Band - Sweat Violet",
-    time: "Time Will Published Soon",
+    date: "Feb 28, Saturday",
+    title: "Live Band - Sweet Violet",
+    time: "9:30PM Till Late",
     desc: "Sweet Violet seek alwasy to take music and performance to it's high octane limits and beyond",
-    img: "/Asst/imgs/galary/secondPhase20.jpg",
+    img: "/Asst/imgs/events/slide-1.png",
     tag: "Special",
   },
   {
     date: "March 21, Saturday",
     title: "Tracks Second Anniversary",
-    time: "Time Will be Published Soon",
+    time: "07:30 PM",
     desc: "This is going to be Epic Experience, More Information on the way",
-    img: "/Asst/imgs/galary/secondPhase21.jpg",
+    img: "/Asst/imgs/events/websitetracks.png",
     tag: "Special",
   },
 ];
