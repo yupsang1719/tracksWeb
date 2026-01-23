@@ -27,6 +27,11 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 // import BookTable from "./pages/BookTable";
+import OffersPage from "./pages/OffersPage";
+import OpeningTimesPage from "./pages/OpeningTimesPage";
+import DiscountNight from "./pages/DiscountNight";
+import ExclusiveTuesday from "./pages/ExclusiveTuesday";
+import TracksHour from "./pages/TracksHour";
 
 export default function App() {
   return (
@@ -44,6 +49,11 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/book" element={<ComingSoon />} />
+            <Route path="/offers" element={<OffersPage />} />
+            <Route path="/offers/discount-night" element={<DiscountNight />} />
+            <Route path="/offers/exclusive-tuesday" element={<ExclusiveTuesday />} />
+            <Route path="/offers/tracks-hour" element={<TracksHour />} />
+            <Route path="/opening-times" element={<OpeningTimesPage />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route
