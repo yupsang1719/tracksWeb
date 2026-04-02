@@ -5,20 +5,20 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 // Sample events
 const events = [
   {
-    date: "Feb 28, Saturday",
-    title: "Live Band - Sweet Violet",
-    time: "9:30PM Till Late",
-    desc: "Sweet Violet seek alwasy to take music and performance to it's high octane limits and beyond",
-    img: "/Asst/imgs/events/slide-1.png",
-    tag: "Special",
+    date: "April 17, Friday",
+    title: "Pinks - Drum & Bass Night",
+    time: "08:00 PM",
+    desc: "Get ready for a high-energy night at Tracks Aldershot as Drum & Bass All Night presents Pinks!",
+    img: "/Asst/imgs/events/upcomingEvents/drum_bass.jpg",
+    tag: "Live Dj",
   },
   {
-    date: "March 21, Saturday",
-    title: "Tracks Second Anniversary",
-    time: "07:30 PM",
-    desc: "This is going to be Epic Experience, More Information on the way",
-    img: "/Asst/imgs/events/websitetracks.png",
-    tag: "Special",
+    date: "April 5, Sunday",
+    title: "Drag Bingo (Hosted by Lulu)",
+    time: "04:00 PM",
+    desc: "high-energy mix of bingo, comedy, and live drag performance — all hosted by the fabulous Lulu herself.",
+    img: "/Asst/imgs/events/upcomingEvents/drag_bingo.jpeg",
+    tag: "Bingo",
   },
 ];
 

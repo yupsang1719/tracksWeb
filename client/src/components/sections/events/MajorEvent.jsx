@@ -5,20 +5,18 @@ import CountdownTimer from "../../CountDownTimer";
 
 const events = [
   {
-    title: "Live Band - Sweet Violet",
-    date: "Feb 28, Saturday",
-    image: "/Asst/imgs/events/Cover-sweet-violet.png",
-    description:
-      "Sweet Violet (SVT) are a four piece hard and heavy rock and roll band based in in Guildford, looking to deliver authentic, unrelenting and explosive rock and roll music to audiences everywhere. Specializing in blues-driven Hard Rock and Heavy Metal inspired by the 1970s, Sweet Violet seek always to take music and performance to it's high octane limits and beyond.",
-      deadline: "2026-02-28T21:30:00",
+    title: "Pinks - Drum & Bass Night",
+    date: "April 17, Friday",
+    image: "/Asst/imgs/events/majorEvents/drum_bass.jpg",
+    description: "Get ready for a high-energy night at Tracks Aldershot as Drum & Bass All Night presents Pinks! Join us on Friday, 17th April from 8:00 PM to 2:00 AM for a full takeover of heavy beats, deep bass, and non-stop vibes. Featuring a stacked lineup including Gizme, Joshwana, Krojo, Lau Dat, Memphis, Mezza, Neil Pwah, and OC, this is set to be an unforgettable night for all drum & bass lovers. Expect powerful sets, an electric crowd, and a proper club atmosphere from start to finish. Whether you're here for the music, the energy, or the full night experience, this is one you don’t want to miss. Arrive early, grab your drinks, and get ready to go all night long at Tracks.",
+      deadline: "2026-04-17T20:00:00",
   },
   {
-    title: "TRACKS IS TURNING 2!",
-    date: "March 21, Saturday",
-    image: "/Asst/imgs/events/Anniversary cover.png",
-    description:
-      "TRACKS IS TURNING 2! Join us as we celebrate 2 years of music, drinks, and unforgettable nights at Tracks. 21st March. We’re planning something special to mark the occasion Details coming soon.  Save the date and celebrate with us.",
-      deadline: "2026-03-21T19:30:00",
+    title: "Drag Bingo (Hosted by Lulu)",
+    date: "April 5, Sunday",
+    image: "/Asst/imgs/events/majorEvents/drag_bingo.jpg",
+    description: "Get ready for an unforgettable afternoon of entertainment at Tracks Aldershot as Lulu’s Drag Bingo returns! Join us on Sunday, 5th April from 4:00 PM to 7:30 PM for a high-energy mix of bingo, comedy, and live drag performance — all hosted by the fabulous Lulu herself. Expect big laughs, bold performances, and plenty of surprises throughout the event. Whether you're coming for the bingo, the show, or just a great time with friends, this is one event you don’t want to miss. With a lively atmosphere and crowd-favourite moments, Drag Bingo at Tracks always brings the house down. Entry is just £2 to play, with multiple rounds and chances to win prizes throughout the event. Please note: This is a first come, first served event. We are not taking table bookings, so we recommend arriving early to secure your spot. Bring your friends, grab a drink, and get ready for an afternoon full of fun, laughter, and unforgettable vibes.",
+      deadline: "2026-04-05T16:00:00",
   },
 ];
 
