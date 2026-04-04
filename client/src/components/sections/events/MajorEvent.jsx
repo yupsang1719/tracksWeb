@@ -37,12 +37,12 @@ export default function MajorEvent() {
             key={index}
             className="bg-[#0d2d45] rounded-xl shadow-lg overflow-hidden border border-[#2A5B8A] transition hover:shadow-xl hover:scale-[1.01] cursor-pointer"
           >
-            {/* Facebook-Style Cover Image (820x312) */}
-            <div className="relative" style={{ height: "300px" }}>
+            {/* A4 Portrait Poster */}
+            <div className="relative w-full aspect-[1/1.414]">
               <img
                 src={event.image}
                 alt={event.title}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               {/* <div className="absolute top-3 left-3 bg-yellow-400 text-black px-3 py-1 text-xs font-bold rounded-full shadow-md">
                 🔥 Limited Offer

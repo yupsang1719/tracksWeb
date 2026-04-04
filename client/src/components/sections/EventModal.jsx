@@ -17,11 +17,13 @@ export default function EventModal({ event, onClose }) {
 
         {/* Image and Info */}
         <div className="flex flex-col md:flex-row gap-6">
-          <img
-            src={event.image}
-            alt={event.title}
-            className="w-full md:w-1/2 rounded-md object-cover"
-          />
+          <div className="w-full md:w-1/2 aspect-[1/1.414] relative flex-shrink-0 rounded-md overflow-hidden">
+            <img
+              src={event.image}
+              alt={event.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
           <div className="space-y-4 md:w-1/2">
             <h2 className="text-3xl font-bold">{event.title}</h2>
             <p className="text-[#6D9999]">{event.date}</p>

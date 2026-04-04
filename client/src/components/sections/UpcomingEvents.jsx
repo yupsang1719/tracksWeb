@@ -35,12 +35,12 @@ export default function UpcomingEvents() {
           {events.map((event, index) => (
             <div
               key={index}
-              className="relative bg-white/5 backdrop-blur-sm border border-[#6D9999] rounded-lg overflow-hidden shadow-xl group transition-transform hover:scale-[1.02]"
+              className="relative bg-white/5 backdrop-blur-sm border border-[#6D9999] rounded-lg overflow-hidden shadow-xl group transition-transform hover:scale-[1.02] aspect-[1/1.414]"
             >
               <img
                 src={event.img}
                 alt={event.title}
-                className="w-full h-[420px] object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute top-4 left-4 bg-[#dee43b] text-sm px-3 py-1 rounded-full font-semibold text-[#0F3C5C] shadow">
                 {event.tag}

@@ -1,23 +1,16 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
-  const [status, setStatus] = useState("");
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-
-    try {
-      await axios.post("/send-confirmation", formData);
-      setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (err) {
-      setStatus("Failed to send message. Please try again.");
-    }
+    const { name, email, subject, message } = formData;
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    const sub = encodeURIComponent(subject || "Contact Form Message");
+    window.location.href = `mailto:funkyend51@gmail.com?subject=${sub}&body=${body}`;
   };
 
   return (
@@ -65,7 +58,6 @@ export default function Contact() {
         >
           Send Message
         </button>
-        {status && <p className="text-center text-sm mt-2">{status}</p>}
       </form>
       <div className="mt-12 max-w-4xl mx-auto">
         <h3 className="text-2xl font-bold text-center mb-4">📍 Find Us</h3>

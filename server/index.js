@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 const connectDB = require("./config/db");
 
 const adminRoutes = require("./routes/adminRoutes");
@@ -45,9 +46,10 @@ app.post("/send-confirmation", async (req, res) => {
 
     await transporter.sendMail({
       from: `"Tracks Contact Form" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+      to: "funkyend51@gmail.com",
+      replyTo: email,
       subject: subject || "New Contact Form Submission",
-      text: `From: ${name} <${email}>\n\nMessage:\n${message}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
     res.status(200).send("Email sent");
