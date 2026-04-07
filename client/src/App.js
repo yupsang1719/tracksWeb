@@ -37,42 +37,50 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-[#0F3C5C] text-white">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/menu/cocktails" element={<CocktailMenu />} />
-            <Route path="/menu/wines" element={<WineMenu />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/book" element={<ComingSoon />} />
-            <Route path="/offers" element={<OffersPage />} />
-            <Route path="/offers/discount-night" element={<DiscountNight />} />
-            <Route path="/offers/exclusive-tuesday" element={<ExclusiveTuesday />} />
-            <Route path="/offers/tracks-hour" element={<TracksHour />} />
-            <Route path="/opening-times" element={<OpeningTimesPage />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route
-              path="/admin/dashboard"
-              element={
-                <ProtectedRoute>
-                  <AdminDashboard />
-                </ProtectedRoute>
-              }
-            />
+      <Routes>
+        {/* Admin routes — no Header/Footer */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
 
-            <Route path="/success" element={<Success />} />
-            <Route path="/cancel" element={<Cancel />} />
-
-          </Routes>
-        </main>
-        <Footer />
-        <OffersModal />
-      </div>
+        {/* Public routes — with Header/Footer */}
+        <Route
+          path="*"
+          element={
+            <div className="flex flex-col min-h-screen bg-[#0F3C5C] text-white">
+              <Header />
+              <main className="flex-grow">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/menu/cocktails" element={<CocktailMenu />} />
+                  <Route path="/menu/wines" element={<WineMenu />} />
+                  <Route path="/events" element={<Events />} />
+                  <Route path="/gallery" element={<Gallery />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/book" element={<ComingSoon />} />
+                  <Route path="/offers" element={<OffersPage />} />
+                  <Route path="/offers/discount-night" element={<DiscountNight />} />
+                  <Route path="/offers/exclusive-tuesday" element={<ExclusiveTuesday />} />
+                  <Route path="/offers/tracks-hour" element={<TracksHour />} />
+                  <Route path="/opening-times" element={<OpeningTimesPage />} />
+                  <Route path="/success" element={<Success />} />
+                  <Route path="/cancel" element={<Cancel />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+              <OffersModal />
+            </div>
+          }
+        />
+      </Routes>
     </Router>
   );
 }

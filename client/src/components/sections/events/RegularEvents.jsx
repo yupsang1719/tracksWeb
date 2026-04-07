@@ -1,53 +1,32 @@
-import React, { useState } from "react";
-
-// Sample data for regular events
-const regularEvents = [
-  {
-    day: "Sunday",
-    title: "Spin The Wheel",
-    host: "Rainbow Entertainment",
-    flyer: "/Asst/imgs/events/rainbowKaraoke.jpeg",
-    description: "The vibes are unreal, the spins were lucky, and the crowd went wild!",
-  },
-  {
-    day: "Tuesday",
-    title: "Exclusive Night",
-    host: "Mark Farren",
-    flyer: "/Asst/imgs/events/discoKaraoke.jpeg",
-    description: "Karaoke Night || Come for the deals, stay for the vibes. your tuesday just got exclusive",
-  },
-  {
-    day: "Wednesday & Thursday",
-    title: "Discount Night",
-    host: "DJ MDK",
-    flyer: "/Asst/imgs/events/discountNightReg.jpeg",
-    description: "2-for-1 House Spirits & DJ MDK to heat up midweek nights.",
-  },
-  {
-    day: "Friday",
-    title: "Tracks Hour",
-    host: "DJ MDK",
-    flyer: "/Asst/imgs/galary/secondPhase18.jpg",
-    description: "Cocktails - 2 for £15 || House Spirits £4.50 || Shots From £2 || DJ MDK live. ",
-  },
-  {
-    day: "Saturday",
-    title: "Tracks Hour",
-    host: "DJ Trinni",
-    flyer: "/Asst/imgs/galary/secondPhase3.jpg",
-    description: "Cocktails - 2 for £15 || House Spirits £4.50 || Shots From £2 || DJ MDK live. ",
-  },
-];
+import React, { useState, useEffect } from "react";
 
 export default function RegularEvents() {
+  const [regularEvents, setRegularEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/events/regular")
+      .then((r) => r.json())
+      .then((data) => setRegularEvents(data))
+      .catch((err) => console.error("Failed to load regular events", err))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <p className="text-[#6D9999] text-center py-8">Loading events...</p>;
+  }
+
+  if (regularEvents.length === 0) {
+    return <p className="text-[#6D9999] text-center py-8">No regular events at the moment.</p>;
+  }
 
   return (
     <>
       <div className="grid md:grid-cols-3 gap-8">
-        {regularEvents.map((event, index) => (
+        {regularEvents.map((event) => (
           <div
-            key={index}
+            key={event._id}
             className="bg-[#123b58] rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition duration-300"
             onClick={() => setSelectedEvent(event)}
           >
@@ -83,7 +62,6 @@ export default function RegularEvents() {
               &times;
             </button>
 
-            {/* Flyer */}
             <div className="flex-1 overflow-auto">
               <img
                 src={selectedEvent.flyer}
@@ -92,7 +70,6 @@ export default function RegularEvents() {
               />
             </div>
 
-            {/* Content */}
             <div className="p-6 text-black space-y-2 bg-white">
               <h3 className="text-2xl font-bold">{selectedEvent.title}</h3>
               <p className="text-sm text-gray-700">Hosted by: {selectedEvent.host}</p>
