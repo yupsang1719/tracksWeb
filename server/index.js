@@ -61,7 +61,7 @@ if (isProd) {
   const buildPath = path.join(__dirname, "../client/build");
   app.use(express.static(buildPath));
   // All non-API routes return the React app
-  app.get("*", (req, res) => {
+  app.get("/{*path}", (req, res) => {
     res.sendFile(path.join(buildPath, "index.html"));
   });
 }
