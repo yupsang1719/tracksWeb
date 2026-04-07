@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Booking = require("../models/Booking");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = process.env.STRIPE_SECRET_KEY ? require("stripe")(process.env.STRIPE_SECRET_KEY) : null;
 const nodemailer = require("nodemailer");
 
 const generateTicketNumber = (eventTitle = "GEN") => {

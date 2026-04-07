@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 require("dotenv").config();
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = process.env.STRIPE_SECRET_KEY ? require("stripe")(process.env.STRIPE_SECRET_KEY) : null;
 
 router.post("/create-checkout-session", async (req, res) => {
   const { name, email, tickets, message, eventTitle } = req.body;
