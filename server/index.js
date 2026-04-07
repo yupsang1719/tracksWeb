@@ -9,6 +9,7 @@ const adminRoutes = require("./routes/adminRoutes");
 const ticketRoutes = require("./routes/ticketRoutes");
 const webhookRoutes = require("./routes/webhook");
 const eventRoutes = require("./routes/eventRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -29,10 +30,15 @@ app.use("/webhook", webhookRoutes);
 // Body parser
 app.use(express.json());
 
+// Serve uploaded images
+const uploadsPath = path.join(__dirname, "../uploads");
+app.use("/uploads", express.static(uploadsPath));
+
 // API Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/tickets", ticketRoutes);
 app.use("/api/events", eventRoutes);
+app.use("/api/upload", uploadRoutes);
 
 // Email confirmation
 app.post("/send-confirmation", async (req, res) => {

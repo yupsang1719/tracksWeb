@@ -9,13 +9,13 @@ import {
   CalendarDays,
   LogOut,
   Menu,
-  X,
   Eye,
   EyeOff,
   Pencil,
   Trash2,
   Plus,
   Download,
+  Upload,
 } from "lucide-react";
 
 // ── Constants & helpers ───────────────────────────────────────
@@ -37,6 +37,49 @@ const NAV = [
 
 const inputCls  = "w-full p-2 rounded-lg bg-[#0a1929] border border-[#1e3a52] text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#6D9999]";
 const labelCls  = "block text-xs text-[#6D9999] mb-1 font-medium";
+
+// ── Image upload ──────────────────────────────────────────────
+function ImageUpload({ value, onChange }) {
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleFile = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setError("");
+    setUploading(true);
+    const form = new FormData();
+    form.append("image", file);
+    try {
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
+        body: form,
+      });
+      const data = await res.json();
+      if (!res.ok) return setError(data.message || "Upload failed");
+      onChange(data.url);
+    } catch {
+      setError("Upload failed");
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  return (
+    <div className="space-y-2">
+      {value && (
+        <img src={value} alt="preview" className="w-full h-40 object-cover rounded-lg border border-[#1e3a52]" />
+      )}
+      <label className={`flex items-center gap-2 cursor-pointer w-full p-2 rounded-lg border border-dashed border-[#2A5B8A] hover:border-[#6D9999] transition text-sm text-gray-400 hover:text-white ${uploading ? "opacity-50 pointer-events-none" : ""}`}>
+        <Upload size={16} />
+        {uploading ? "Uploading..." : value ? "Replace image" : "Upload image"}
+        <input type="file" accept="image/*" className="hidden" onChange={handleFile} />
+      </label>
+      {error && <p className="text-red-400 text-xs">{error}</p>}
+    </div>
+  );
+}
 
 // ── Stat card ─────────────────────────────────────────────────
 function StatCard({ label, value, sub, color = "#6D9999" }) {
@@ -60,7 +103,9 @@ function EventForm({ form, setForm, onSubmit, onCancel, isEditing, error, fields
         {fields.map(({ key, label, placeholder, type, required, span }) => (
           <div key={key} className={span ? "sm:col-span-2" : ""}>
             <label className={labelCls}>{label}{required ? " *" : ""}</label>
-            {type === "textarea" ? (
+            {type === "image" ? (
+              <ImageUpload value={form[key]} onChange={(url) => setForm({ ...form, [key]: url })} />
+            ) : type === "textarea" ? (
               <textarea
                 className={`${inputCls} h-28 resize-y`}
                 placeholder={placeholder}
@@ -241,7 +286,7 @@ export default function AdminDashboard() {
     { key: "date",        label: "Date (display)",     placeholder: "April 17, Friday",                             required: true },
     { key: "time",        label: "Time (display)",     placeholder: "8:00 PM" },
     { key: "tag",         label: "Tag",                placeholder: "Live DJ" },
-    { key: "image",       label: "Image path",         placeholder: "/Asst/imgs/events/majorEvents/drum_bass.jpg",  required: true },
+    { key: "image",       label: "Image",              type: "image",                                               required: true },
     { key: "deadline",    label: "Countdown deadline", placeholder: "",  type: "datetime-local",                    required: true },
     { key: "description", label: "Description",        placeholder: "Event description...", type: "textarea",       required: true, span: true },
   ];
@@ -251,7 +296,7 @@ export default function AdminDashboard() {
     { key: "day",         label: "Day(s)",          placeholder: "Wednesday & Thursday",                          required: true },
     { key: "title",       label: "Title",            placeholder: "Discount Night",                                required: true },
     { key: "host",        label: "Host",             placeholder: "DJ MDK",                                        required: true },
-    { key: "flyer",       label: "Flyer image path", placeholder: "/Asst/imgs/events/discountNightReg.jpeg",       required: true },
+    { key: "flyer",       label: "Flyer image",      type: "image",                                               required: true },
     { key: "order",       label: "Display order",    placeholder: "0", type: "number" },
     { key: "description", label: "Description",      placeholder: "Event description...", type: "textarea",        required: true, span: true },
   ];
