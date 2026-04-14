@@ -24,6 +24,9 @@ if (isProd && !process.env.CLIENT_URL) {
 // Connect to MongoDB
 connectDB();
 
+// Trust reverse proxy (nginx)
+app.set("trust proxy", 1);
+
 // Security headers
 app.use(helmet());
 
