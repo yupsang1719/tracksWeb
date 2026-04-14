@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 
-// Replace with your actual Stripe publishable key
-const stripePromise = loadStripe("pk_live_51Rak0GDGDVBsojmjhJ7OHFqMugy6mi0NBzjnfbUhYNU8dSUblejWgmSlw4RqZkRt3FPqpmfxQAz6cJwluoDv8iFr00qS1jdWQ5");
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 export default function TicketModal({ isOpen, onClose, eventTitle }) {
   const [formData, setFormData] = useState({

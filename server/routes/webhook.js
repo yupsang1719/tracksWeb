@@ -34,6 +34,12 @@ router.post("/", express.raw({ type: "application/json" }), async (req, res) => 
     const session = event.data.object;
 
     try {
+      // Idempotency: skip if already processed
+      const existing = await Booking.findOne({ paymentIntentId: session.payment_intent });
+      if (existing) {
+        return res.status(200).send("Already processed");
+      }
+
       // 1. Save to DB
       const booking = new Booking({
         name: session.metadata.name,

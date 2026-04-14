@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 const path = require("path");
 const nodemailer = require("nodemailer");
 const connectDB = require("./config/db");
@@ -15,14 +17,30 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const isProd = process.env.NODE_ENV === "production";
 
+if (isProd && !process.env.CLIENT_URL) {
+  throw new Error("CLIENT_URL env var must be set in production");
+}
+
 // Connect to MongoDB
 connectDB();
+
+// Security headers
+app.use(helmet());
 
 // CORS — open in dev, locked to domain in production
 app.use(cors({
   origin: isProd ? process.env.CLIENT_URL : (_origin, cb) => cb(null, true),
   credentials: true,
 }));
+
+// Rate limiting on login
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10,
+  message: { error: "Too many login attempts. Try again in 15 minutes." },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 // ⚠️ Stripe webhook must come BEFORE express.json()
 app.use("/webhook", webhookRoutes);
@@ -35,6 +53,7 @@ const uploadsPath = path.join(__dirname, "../uploads");
 app.use("/uploads", express.static(uploadsPath));
 
 // API Routes
+app.use("/api/admin/login", loginLimiter);
 app.use("/api/admin", adminRoutes);
 app.use("/api/tickets", ticketRoutes);
 app.use("/api/events", eventRoutes);

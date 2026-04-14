@@ -29,9 +29,17 @@ const upload = multer({
   },
 });
 
-router.post("/", auth, upload.single("image"), (req, res) => {
-  if (!req.file) return res.status(400).json({ message: "No file uploaded" });
-  res.json({ url: `/uploads/${req.file.filename}` });
+router.post("/", auth, (req, res) => {
+  upload.single("image")(req, res, (err) => {
+    if (err) {
+      if (err.code === "LIMIT_FILE_SIZE") {
+        return res.status(400).json({ message: "File too large. Maximum size is 10MB." });
+      }
+      return res.status(400).json({ message: err.message || "Upload failed" });
+    }
+    if (!req.file) return res.status(400).json({ message: "No file uploaded" });
+    res.json({ url: `/uploads/${req.file.filename}` });
+  });
 });
 
 module.exports = router;

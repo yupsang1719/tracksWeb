@@ -52,9 +52,6 @@ export default function Welcome() {
               We are a family friendly venue, with a welcoming location and a beautiful beer garden.
             </p>
             <p>
-              Offering fresh food, our menu includes delicious dishes, including wings, burgers and dumplings!
-            </p>
-            <p>
               We also show live sports at the venue, perfect to view whilst enjoying a drink from our bar!
             </p>
             <p>

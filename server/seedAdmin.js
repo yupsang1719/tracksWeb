@@ -8,12 +8,16 @@ async function seedAdmin() {
 
   await Admin.deleteMany({});
 
-  await Admin.create({
-    email: "funkyend51@gmail.com",
-    password: "Griash1719!!",
-  });
+  const email = process.env.ADMIN_EMAIL;
+  const password = process.env.ADMIN_PASSWORD;
 
-  console.log("Admin user created: funkyend51@gmail.com");
+  if (!email || !password) {
+    throw new Error("ADMIN_EMAIL and ADMIN_PASSWORD must be set in .env before seeding");
+  }
+
+  await Admin.create({ email, password });
+
+  console.log(`Admin user created: ${email}`);
   await mongoose.disconnect();
 }
 

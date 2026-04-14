@@ -3,6 +3,11 @@ node_modules/
 
 # dotenv environment variables
 .env
+.env.local
+.env.production
+
+# uploaded images (use cloud storage in production)
+uploads/
 
 # build output
 dist/
